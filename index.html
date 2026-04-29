@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Cook &amp; Chill | Servicio de Reparación y Mantenimiento Industrial</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Space Grotesk & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0050cd", 
+                        "secondary": "#fe6b00", 
+                        "accent-red": "#e60000", 
+                        "accent-yellow": "#ffcc00", 
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b3c5ff",
+                        "on-background": "#191c1e",
+                        "outline-variant": "#c2c6d8",
+                        "primary-fixed": "#dbe1ff",
+                        "background": "#f7f9fc",
+                        "secondary-container": "#fe6b00",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f7f9fc",
+                        "primary-container": "#0050cd",
+                        "surface-container": "#eceef1",
+                        "on-surface-variant": "#424656",
+                        "surface-variant": "#e0e3e6",
+                        "error": "#ba1a1a",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fc",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-sm": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(254, 107, 0, 0.15);
+        }
+        .text-gradient-logo {
+            background: linear-gradient(135deg, #fe6b00, #e60000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <!-- TopAppBar -->
+    <header class="bg-white dark:bg-zinc-950 docked full-width top-0 sticky z-50 border-b border-zinc-200 dark:border-zinc-800 shadow-sm transition-all duration-300">
+        <div class="flex justify-between items-center w-full px-4 md:px-8 h-20 max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 z-20 relative">
+                <img alt="Cook &amp; Chill Logo" class="h-10 w-10 md:h-12 md:w-12 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugcyugkyOpNcNUotUkMZsN01iSbVSOAuwn0FU8O7ugqynmBFfFqlzFAZwPW3n3Y3ClpDavjNbgqNKSo-wTXAaSxKzPVGybzCMdt1N9a7KqWP3b_UAevZYeTVhlJbuMeLI7qNYz5MaTXBjrDHRwNCgauarX8iQrF5mJ6kKXa9fxRK-K4UfDhGKcFkI4JO4ixWMdZfrOiqk7O8KUKF8btPeocgK6q2abYBRqPhZLDI5jtEEe2tIEjsExNEDOzEZcGM4GF9Qfahx7OUA"/>
+                <span class="text-lg md:text-xl font-black tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Space_Grotesk'] uppercase">Cook &amp; Chill</span>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight text-sm font-semibold uppercase">
+                <a class="text-secondary border-b-2 border-secondary pb-1" href="#">Inicio</a>
+                <a class="text-zinc-600 hover:text-secondary transition-colors" href="#">Mantenimiento</a>
+                <a class="text-zinc-600 hover:text-secondary transition-colors" href="#">Ventas</a>
+                <a class="text-zinc-600 hover:text-secondary transition-colors" href="#">Refacciones</a>
+            </nav>
+            
+            <div class="hidden lg:flex items-center gap-4">
+                <a class="flex items-center gap-2 text-primary font-bold hover:text-secondary transition-colors" href="tel:5576008890">
+                    <span class="material-symbols-outlined text-sm">call</span>
+                    55 7600 8890
+                </a>
+                <button class="bg-secondary text-white px-6 py-2.5 rounded-lg text-label-md font-['Space_Grotesk'] uppercase tracking-widest hover:bg-orange-600 transition-all shadow-sm">
+                    Servicio
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" aria-label="Abrir menú" class="lg:hidden flex items-center justify-center p-2 text-zinc-900 dark:text-zinc-50 z-20 relative">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden flex-col bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 absolute top-20 left-0 w-full shadow-lg z-10 transition-all duration-300 transform origin-top">
+            <nav class="flex flex-col p-6 gap-6 font-['Space_Grotesk'] tracking-tight text-base font-semibold uppercase">
+                <a class="text-secondary border-b border-zinc-100 pb-2" href="#">Inicio</a>
+                <a class="text-zinc-600 hover:text-secondary transition-colors border-b border-zinc-100 pb-2" href="#">Mantenimiento</a>
+                <a class="text-zinc-600 hover:text-secondary transition-colors border-b border-zinc-100 pb-2" href="#">Ventas</a>
+                <a class="text-zinc-600 hover:text-secondary transition-colors border-b border-zinc-100 pb-2" href="#">Refacciones</a>
+            </nav>
+            <div class="flex flex-col p-6 gap-4 bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+                <a class="flex items-center justify-center gap-2 text-primary font-bold text-lg" href="tel:5576008890">
+                    <span class="material-symbols-outlined text-base">call</span>
+                    55 7600 8890
+                </a>
+                <button class="bg-secondary text-white px-6 py-4 rounded-lg text-label-md font-['Space_Grotesk'] uppercase tracking-widest hover:bg-orange-600 transition-all shadow-sm w-full">
+                    Solicitar Servicio
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[500px] md:min-h-[700px] lg:min-h-[751px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Commercial Kitchen" class="w-full h-full object-cover brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOip3R8AnTHPEJnR4yyWKIdXb1NUldrc3AQFM_XDQ0Wk14u3-CJwUODyF1RpW_aDB0u1JB8O5E9qKxgDkdrQ-om2oD1x9LK45HN1e1vvPZwsxllibMFqubsCf4P2nZFl9-ov3MQiXLZ_y9X4VclVUidxgt_w9jPaStJwK-RKxr8eQFwFlxTDt7K2zKJCQNM1wDwaTtQLfR6WHzM_YMEaO5yJeNZcyeSR1ETfL66nNze3I-BIrvMKL4BM9f2oc7fp0Lpb_CWJWUbA"/>
+                <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-zinc-950/90 md:from-zinc-950/90 md:via-zinc-950/40 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full mt-12 md:mt-0">
+                <div class="max-w-3xl flex flex-col gap-4 md:gap-6">
+                    <span class="text-secondary font-bold uppercase tracking-[0.1em] md:tracking-[0.2em] border-l-4 border-secondary px-3 md:px-4 text-xs md:text-sm">Expertos en Cocinas Industriales</span>
+                    <h1 class="text-white font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-[56px] lg:text-[64px] font-bold text-balance leading-[1.1]">Servicio de <span class="text-secondary">Reparación y Mantenimiento</span> de Equipos</h1>
+                    <p class="text-zinc-300 text-base md:text-lg lg:text-xl font-['Inter'] font-normal leading-relaxed mt-2 md:mt-0">Soluciones técnicas integrales para equipos de refrigeración y cocción. Atención profesional a las mejores marcas del mercado.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-6 md:mt-4">
+                        <a class="bg-secondary text-white px-6 md:px-8 py-4 rounded-lg font-['Space_Grotesk'] font-semibold text-sm uppercase tracking-wider industrial-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 text-center" href="https://wa.me/525571078342">
+                            <span class="material-symbols-outlined">chat</span> WhatsApp 55 7107 8342
+                        </a>
+                        <button class="border-2 border-white/30 text-white px-6 md:px-8 py-4 rounded-lg font-['Space_Grotesk'] font-semibold text-sm uppercase tracking-wider backdrop-blur-sm hover:bg-white/10 transition-all text-center">Ver Catálogo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Partners -->
+        <section class="bg-surface-container-low py-10 md:py-16 border-y border-outline-variant/30">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <p class="text-center text-outline font-label-sm uppercase tracking-widest mb-8 md:mb-10 px-4">Centro de Servicio Autorizado y Especialista en Marcas Líderes</p>
+                <div class="flex justify-center items-center hover:grayscale-0 transition-all duration-500 px-2 md:px-0">
+                    <img alt="Marcas Líderes" class="max-w-full md:max-w-4xl w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhJw3xsQ69V82F7BCMT5bDgzLmGprxmuKEIXbSvxhCE9SyDfAYhwZTAPgpSFJyo8hiXRbCi7Ly7bPUSkfMKLGz3YNfFALgisOSKqtCGjClaOh-oHH8Iy2ABzf8yljJqJgD42RxiJ8-NAMZYpqhJTjHj6q7v6wjc45mjnjYJerN9wTzjdUQjaUQuQTRlc8PF_g5ND9dKrwFaXLzcJzIsHkDv85seodG1obKPwhbDg5A24UVO2QHiSSBPXzLenmAS9upE6O6QcfXjGA"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipos que reparamos Section -->
+        <section class="py-16 md:py-24 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="flex flex-col items-center text-center mb-10 md:mb-16">
+                    <h2 class="font-headline-md text-on-background mb-3 md:mb-4 uppercase tracking-tight text-2xl md:text-3xl">Equipos que reparamos</h2>
+                    <div class="w-16 md:w-20 h-1.5 bg-secondary mb-5 md:mb-6"></div>
+                    <p class="max-w-2xl text-on-surface-variant px-2 md:px-0 text-sm md:text-base">Soporte técnico integral para toda la línea de cocción y refrigeración industrial de las marcas más prestigiosas.</p>
+                </div>
+                <div class="relative group">
+                    <div class="bg-zinc-50 rounded-2xl p-4 md:p-8 border border-outline-variant/30 flex justify-center">
+                        <img alt="Catálogo de Equipos" class="w-full max-w-4xl h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida/ADBb0uir1PqFRqWXLe8lWM4BItUpUg0zPqH8iyinG4ofqUS9oN9bNmCgnDBP5Tx4JfpTceILXGSyER3rZEZptI2DPRJSc6B_xKx6HX478f4lWtlTsffvEbJL7CKObPbHjlm_mlSxXzkcqLJ4cMXfgg5dznM9_myTRJrnpJT5XTrP1ot21EFQRbjOJnpy8HO5F3MVgGAKI_ZOrVBequZJLZZ2xedTh6WC7vERHoXAJcaGCekQu08pFN7gB0MNkII7j_olaE4upmWENMBApQ"/>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-6 md:mt-8">
+                        <div class="bg-surface-container p-3 md:p-4 rounded-lg text-center font-bold text-[10px] md:text-xs uppercase tracking-widest text-zinc-600 flex items-center justify-center">Hornos Combinados</div>
+                        <div class="bg-surface-container p-3 md:p-4 rounded-lg text-center font-bold text-[10px] md:text-xs uppercase tracking-widest text-zinc-600 flex items-center justify-center">Estufones Industriales</div>
+                        <div class="bg-surface-container p-3 md:p-4 rounded-lg text-center font-bold text-[10px] md:text-xs uppercase tracking-widest text-zinc-600 flex items-center justify-center">Refrigeración</div>
+                        <div class="bg-surface-container p-3 md:p-4 rounded-lg text-center font-bold text-[10px] md:text-xs uppercase tracking-widest text-zinc-600 flex items-center justify-center">Lavavajillas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Intro & Services -->
+        <section class="py-16 md:py-24 px-4 md:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-gutter">
+                <!-- About Section -->
+                <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1 mt-8 lg:mt-0">
+                    <img alt="Logo" class="w-20 h-20 md:w-24 md:h-24 mb-6 md:mb-8" src="https://lh3.googleusercontent.com/aida/ADBb0ugcyugkyOpNcNUotUkMZsN01iSbVSOAuwn0FU8O7ugqynmBFfFqlzFAZwPW3n3Y3ClpDavjNbgqNKSo-wTXAaSxKzPVGybzCMdt1N9a7KqWP3b_UAevZYeTVhlJbuMeLI7qNYz5MaTXBjrDHRwNCgauarX8iQrF5mJ6kKXa9fxRK-K4UfDhGKcFkI4JO4ixWMdZfrOiqk7O8KUKF8btPeocgK6q2abYBRqPhZLDI5jtEEe2tIEjsExNEDOzEZcGM4GF9Qfahx7OUA"/>
+                    <h2 class="font-headline-md text-on-background mb-4 md:mb-6 text-2xl md:text-3xl leading-tight">Excelencia Técnica en cada Reparación</h2>
+                    <div class="w-16 h-1 bg-secondary mb-6 md:mb-8"></div>
+                    <p class="text-body-md text-on-surface-variant mb-4 md:mb-6">
+                        En <strong>Cook &amp; Chill</strong> nos especializamos en el servicio de reparación, mantenimiento preventivo y correctivo a equipos de refrigeración y cocción industrial. 
+                    </p>
+                    <p class="text-body-md text-on-surface-variant italic border-l-2 border-zinc-200 pl-4 py-1">
+                        "Nuestra misión es garantizar que el corazón de su negocio nunca se detenga, ofreciendo soporte técnico especializado con refacciones originales."
+                    </p>
+                </div>
+                <!-- Services Bento Grid -->
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 order-1 lg:order-2">
+                    <div class="bg-white border border-outline-variant p-6 md:p-8 rounded-xl industrial-shadow flex flex-col gap-4 transition-transform hover:-translate-y-1 duration-300">
+                        <div class="w-12 h-12 bg-secondary/10 flex items-center justify-center rounded-lg">
+                            <span class="material-symbols-outlined text-secondary text-3xl" data-icon="construction">construction</span>
+                        </div>
+                        <h3 class="font-headline-sm text-lg md:text-xl uppercase">Mantenimiento Preventivo</h3>
+                        <p class="text-on-surface-variant text-sm flex-grow">Inspecciones programadas para evitar paros costosos y prolongar la vida útil de sus equipos industriales.</p>
+                        <a class="mt-4 text-primary font-label-md flex items-center gap-2 hover:gap-4 transition-all w-fit" href="#">
+                            Saber más <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="bg-white border border-outline-variant p-6 md:p-8 rounded-xl industrial-shadow flex flex-col gap-4 transition-transform hover:-translate-y-1 duration-300">
+                        <div class="w-12 h-12 bg-accent-red/10 flex items-center justify-center rounded-lg">
+                            <span class="material-symbols-outlined text-accent-red text-3xl" data-icon="settings_suggest">settings_suggest</span>
+                        </div>
+                        <h3 class="font-headline-sm text-lg md:text-xl uppercase">Soporte Correctivo</h3>
+                        <h4 class="text-accent-red text-xs font-bold tracking-tighter -mt-3 uppercase">Atención de Emergencias</h4>
+                        <p class="text-on-surface-variant text-sm flex-grow">Diagnóstico y reparación inmediata con técnicos certificados. Atendemos reportes urgentes.</p>
+                        <a class="mt-4 text-primary font-label-md flex items-center gap-2 hover:gap-4 transition-all w-fit" href="tel:5576008890">
+                            Llamar ahora <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="md:col-span-2 bg-zinc-900 text-white p-6 md:p-8 rounded-xl flex flex-col md:flex-row gap-6 md:gap-8 items-center border border-zinc-800 transition-transform hover:-translate-y-1 duration-300">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-white/10 flex items-center justify-center rounded-lg shrink-0">
+                            <span class="material-symbols-outlined text-secondary text-4xl" data-icon="shopping_cart">shopping_cart</span>
+                        </div>
+                        <div class="flex flex-col gap-2 text-center md:text-left">
+                            <h3 class="font-headline-sm text-lg md:text-xl uppercase text-white">Venta de Equipos y Refacciones</h3>
+                            <p class="text-zinc-400 text-sm">Refacciones originales para marcas como RATIONAL, Winterhalter, Tor Rey, y más. Equipos nuevos con instalación profesional.</p>
+                        </div>
+                        <button class="bg-secondary text-white px-6 py-3 rounded-lg font-label-md uppercase tracking-widest shrink-0 hover:bg-orange-600 transition-colors w-full md:w-auto">Ver Catálogo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Quality & Experience (Before & After) -->
+        <section class="bg-surface-container py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 gap-8 md:gap-6">
+                    <div class="max-w-2xl">
+                        <span class="text-secondary font-bold uppercase tracking-widest text-[10px] md:text-xs">Calidad Comprobada</span>
+                        <h2 class="font-headline-md mt-2 text-2xl md:text-3xl">Resultados que Hablan por Sí Solos</h2>
+                        <p class="text-on-surface-variant mt-3 md:mt-4 text-sm md:text-base">Nuestra atención al detalle y uso de componentes originales garantizan que sus equipos queden como nuevos después de nuestra intervención.</p>
+                    </div>
+                    <div class="flex gap-4 md:gap-6 bg-white p-4 md:p-6 rounded-xl shadow-sm border border-outline-variant/10 w-full md:w-auto justify-center md:justify-start">
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-black text-primary">1500+</div>
+                            <div class="text-[9px] md:text-[10px] uppercase font-bold text-zinc-500 tracking-tighter mt-1">Servicios Realizados</div>
+                        </div>
+                        <div class="w-px h-12 bg-outline-variant/30"></div>
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-black text-secondary">24/7</div>
+                            <div class="text-[9px] md:text-[10px] uppercase font-bold text-zinc-500 tracking-tighter mt-1">Disponibilidad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <!-- Case Study 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-outline-variant/20 group">
+                        <div class="overflow-hidden">
+                            <img alt="Antes y Después Mantenimiento 1" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ujRb4ofYmZL7YGMwj2Ue4OWGKfi_7fCtRcEzxTqiuqj9PNjoFJoyzLldkHi5_-2lXUgY2AHeBe8BqEY9Z9i6aihgDnG_A8aa16u9IWn9iG3CO9usAjqjCOryInDFYzez8T7wZmFzaNUsk7ryOJv9j7ouJzHP01jR5XI3-wh8CDTcdt2MbFwe8Bm_woLDxJnlgVOo7ExMfbhSXcD3CBSnD4eQ5roMBPFcVoasHTLAKdsfG1-HjDQbx-r55MbvlNOf-r9gmouM5XNJA"/>
+                        </div>
+                        <div class="p-5 md:p-6">
+                            <h4 class="font-bold text-base md:text-lg uppercase tracking-tight mb-2">Restauración de Condensadores</h4>
+                            <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Eliminación profunda de grasa y sedimentos para optimizar la eficiencia energética del equipo de refrigeración.</p>
+                        </div>
+                    </div>
+                    <!-- Case Study 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-outline-variant/20 group">
+                        <div class="overflow-hidden">
+                            <img alt="Antes y Después Mantenimiento 2" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhNtqBm8YrUn96cxt_VjCjhYLuXjDW0UAUlsuWipb8I5jNsT0EGCGkBfPkuhAragixIMxPrmfpwgQIa6-5dlPJK60_6Q0UC5s2T5u_sYTD03AtXfoU0hNh3Gz6FNBteihmbuPGDKQ_CkKejwCApgHxdOKnlD2r9wlCmjzgzhQ8AXr7JYmK7WFdEYvu1AKs05X5XOIrP-d64ST4Y1oaJDJ8e4-yEGK27FfmiKn4Jjy94MtWaZCHMe70-BFKlsaNfw39xJVWAKVon"/>
+                        </div>
+                        <div class="p-5 md:p-6">
+                            <h4 class="font-bold text-base md:text-lg uppercase tracking-tight mb-2">Reparación de Compresores</h4>
+                            <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Sustitución de componentes críticos y limpieza de circuitos con estándares de ingeniería de fábrica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Excellence Section -->
+        <section class="bg-white py-16 md:py-24 border-y border-outline-variant/30">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative order-2 lg:order-1 px-4 md:px-8 lg:px-0 mt-8 lg:mt-0">
+                    <img alt="Maintenance Work" class="rounded-xl industrial-shadow w-full aspect-[4/3] md:aspect-square object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujcMPFl-2TdcM5zuIA36CKC0TqhiC41jafQlop6ke68x8wdw4A56IrBhHQIzvsZ96-9OXs54sWlvHrc4_AfpS2evPBRu1SRXAc3oT7ZYQaWZciWdyJbD9_TBwmhR5CPnAQ_2k68U4EQMLdI87LgdUytg4M1yAhikUM1wJAp1oCBAJC0Yay2W1qVdfJPR3yvQSr-mZ3oYNhgu4_CXQXZ9kOR56sqio3mMIDDyd8ZNU1pYTfYVgNhQppg6WhniWdeHDBS5uf3fucHxA"/>
+                    <div class="absolute -bottom-6 -right-2 md:-right-6 bg-secondary p-4 md:p-6 rounded-lg text-white font-headline-sm shadow-xl z-10">
+                        <span class="text-lg md:text-2xl leading-tight block">Servicio</span>
+                        <span class="text-[10px] md:text-sm font-body-md uppercase font-bold tracking-widest block mt-1">Especializado</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6 md:gap-8 order-1 lg:order-2">
+                    <div class="flex flex-col gap-4">
+                        <h2 class="font-headline-md leading-tight text-3xl md:text-4xl text-zinc-900">Soluciones de Ingeniería para su Cocina</h2>
+                        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">Entendemos que cada minuto de inactividad es pérdida de ingresos. Nuestro enfoque técnico garantiza confiabilidad mecánica y precisión en cada ajuste.</p>
+                    </div>
+                    <ul class="flex flex-col gap-5 md:gap-6 mt-2">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-secondary/10 p-2 rounded-lg mt-1 shrink-0">
+                                <span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-label-md text-base md:text-lg mb-1 text-zinc-900">Técnicos Certificados</h4>
+                                <p class="text-sm md:text-base text-on-surface-variant">Especialistas capacitados en marcas europeas y americanas de alta gama.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-secondary/10 p-2 rounded-lg mt-1 shrink-0">
+                                <span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-label-md text-base md:text-lg mb-1 text-zinc-900">Componentes Originales</h4>
+                                <p class="text-sm md:text-base text-on-surface-variant">Solo utilizamos refacciones OEM para mantener la garantía e integridad de su equipo.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-secondary/10 p-2 rounded-lg mt-1 shrink-0">
+                                <span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-label-md text-base md:text-lg mb-1 text-zinc-900">Cobertura Amplia</h4>
+                                <p class="text-sm md:text-base text-on-surface-variant">Atención en Ciudad de México y área metropolitana con tiempos de respuesta rápidos.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 md:py-24 bg-primary overflow-hidden relative">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="grid grid-cols-6 md:grid-cols-12 h-full">
+                    <div class="border-r border-white/20"></div><div class="border-r border-white/20"></div><div class="border-r border-white/20"></div><div class="border-r border-white/20"></div><div class="border-r border-white/20"></div><div class="border-r border-white/20 hidden md:block"></div><div class="border-r border-white/20 hidden md:block"></div><div class="border-r border-white/20 hidden md:block"></div><div class="border-r border-white/20 hidden md:block"></div><div class="border-r border-white/20 hidden md:block"></div><div class="border-r border-white/20 hidden md:block"></div><div class="border-r border-white/20 hidden md:block"></div>
+                </div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6 md:mb-8 bg-white/20 rounded-xl flex items-center justify-center text-white shadow-lg backdrop-blur-sm">
+                    <span class="material-symbols-outlined !text-4xl md:!text-5xl">support_agent</span>
+                </div>
+                <h2 class="font-['Space_Grotesk'] font-bold text-3xl md:text-5xl text-white mb-4 md:mb-6">¿Listo para Optimizar su Cocina?</h2>
+                <p class="text-white text-base md:text-lg lg:text-xl mb-8 md:mb-12 opacity-90 max-w-2xl mx-auto font-['Inter']">Contáctenos para un plan de mantenimiento a la medida o solicite una evaluación técnica inmediata.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+                    <a class="bg-white text-primary px-8 md:px-12 py-4 md:py-5 rounded-lg font-['Space_Grotesk'] font-bold text-sm md:text-base uppercase tracking-widest shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all flex items-center justify-center gap-3 w-full sm:w-auto" href="tel:5576008890">
+                        <span class="material-symbols-outlined">call</span> 55 7600 8890
+                    </a>
+                    <a class="bg-secondary text-white px-8 md:px-12 py-4 md:py-5 rounded-lg font-['Space_Grotesk'] font-bold text-sm md:text-base uppercase tracking-widest shadow-xl hover:-translate-y-1 hover:shadow-2xl hover:bg-orange-600 transition-all flex items-center justify-center gap-3 w-full sm:w-auto" href="https://wa.me/525571078342">
+                        <span class="material-symbols-outlined">chat</span> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 text-white w-full border-t border-zinc-800">
+        <div class="flex flex-col lg:flex-row justify-between items-start py-12 md:py-16 px-6 md:px-8 max-w-7xl mx-auto w-full gap-10 md:gap-12">
+            <div class="flex flex-col gap-6 w-full lg:max-w-sm">
+                <div class="flex items-center gap-3">
+                    <img alt="Cook &amp; Chill" class="h-10 w-10 md:h-12 md:w-12 bg-white rounded-md p-1" src="https://lh3.googleusercontent.com/aida/ADBb0ugcyugkyOpNcNUotUkMZsN01iSbVSOAuwn0FU8O7ugqynmBFfFqlzFAZwPW3n3Y3ClpDavjNbgqNKSo-wTXAaSxKzPVGybzCMdt1N9a7KqWP3b_UAevZYeTVhlJbuMeLI7qNYz5MaTXBjrDHRwNCgauarX8iQrF5mJ6kKXa9fxRK-K4UfDhGKcFkI4JO4ixWMdZfrOiqk7O8KUKF8btPeocgK6q2abYBRqPhZLDI5jtEEe2tIEjsExNEDOzEZcGM4GF9Qfahx7OUA"/>
+                    <span class="text-xl md:text-2xl font-black tracking-tighter font-['Space_Grotesk'] uppercase">Cook &amp; Chill</span>
+                </div>
+                <p class="text-zinc-400 font-['Inter'] text-sm leading-relaxed">
+                    Servicio profesional para cocinas industriales. Especialistas en refrigeración y equipos de cocción. Refacciones originales y técnicos certificados.
+                </p>
+                <div class="flex flex-col gap-3 mt-2 md:mt-4">
+                    <a href="tel:5576008890" class="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors w-fit">
+                        <span class="material-symbols-outlined text-secondary">call</span>
+                        <span class="font-['Inter']">55 7600 8890</span>
+                    </a>
+                    <a href="https://wa.me/525571078342" class="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors w-fit">
+                        <span class="material-symbols-outlined text-green-500">chat</span>
+                        <span class="font-['Inter']">55 7107 8342 (WhatsApp)</span>
+                    </a>
+                    <a href="mailto:servicios@cookandchill.com.mx" class="flex items-center gap-3 text-zinc-300 hover:text-white transition-colors w-fit">
+                        <span class="material-symbols-outlined text-secondary">mail</span>
+                        <span class="font-['Inter'] underline decoration-secondary/50 hover:decoration-secondary">servicios@cookandchill.com.mx</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-8 md:gap-16 w-full lg:w-auto">
+                <div class="flex flex-col gap-4 md:gap-6">
+                    <h4 class="font-bold uppercase text-xs md:text-sm tracking-widest text-secondary font-['Space_Grotesk']">Navegación</h4>
+                    <nav class="flex flex-col gap-3 md:gap-4 font-['Inter'] text-sm">
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Inicio</a>
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Mantenimiento</a>
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Venta de Equipos</a>
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Refacciones</a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-4 md:gap-6">
+                    <h4 class="font-bold uppercase text-xs md:text-sm tracking-widest text-secondary font-['Space_Grotesk']">Soporte</h4>
+                    <nav class="flex flex-col gap-3 md:gap-4 font-['Inter'] text-sm">
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Emergencias 24/7</a>
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Pólizas de Servicio</a>
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Contacto</a>
+                        <a class="text-zinc-400 hover:text-white hover:translate-x-1 transition-all" href="#">Privacidad</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="flex flex-row lg:flex-col items-center lg:items-end justify-between w-full lg:w-auto border-t lg:border-t-0 border-zinc-800 pt-8 lg:pt-0 gap-6">
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all" href="#" aria-label="Compartir">
+                        <span class="material-symbols-outlined text-sm md:text-base">share</span>
+                    </a>
+                    <a class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all" href="mailto:servicios@cookandchill.com.mx" aria-label="Enviar correo">
+                        <span class="material-symbols-outlined text-sm md:text-base">mail</span>
+                    </a>
+                </div>
+                <div class="flex flex-col items-start lg:items-end text-left lg:text-right">
+                    <p class="text-zinc-500 font-['Space_Grotesk'] text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em]">© 2024 COOK &amp; CHILL</p>
+                    <p class="text-zinc-600 font-['Space_Grotesk'] text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] mt-1">Commercial Kitchen Services</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-zinc-900 py-3 md:py-4 px-4 md:px-8 text-center border-t border-zinc-800">
+            <p class="text-[8px] md:text-[10px] text-zinc-500 uppercase tracking-[0.1em] md:tracking-widest max-w-4xl mx-auto leading-relaxed">
+                Especialistas en Rational • Winterhalter • Unox • Fagor • Hobart • True • Tor Rey • Asber • Hoshizaki
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts for interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuButton.querySelector('.material-symbols-outlined');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.textContent = 'menu';
+                } else {
+                    menuIcon.textContent = 'close';
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        menuIcon.textContent = 'menu';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
