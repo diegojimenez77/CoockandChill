@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mis solicitudes | Cook &amp; Chill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .header--app { position: sticky; top: 0; z-index: 50; }
+    </style>
+</head>
+<body style="background-color: var(--color-background);">
+    <header class="header header--app">
+        <div class="header__inner container">
+            <div class="header__brand">
+                <span class="material-symbols-outlined" style="color: var(--color-primary);">person</span>
+                <span class="header__title" style="font-size: var(--text-lg); margin-left: var(--space-2);"><span id="cli-header-nombre">Mi cuenta</span></span>
+            </div>
+            <div class="header__actions" style="display: flex;">
+                <a href="solicitud.html" class="button button--outline" style="margin-right: var(--space-2); font-size: 1.2rem;">Nueva solicitud</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div id="demo-json-banner" class="dashboard-card" style="display: none; margin-bottom: var(--space-4); padding: var(--space-4); background: #fef9c3; border: 1px solid #eab308; color: #713f12; font-size: 1.3rem; line-height: 1.45;">
+            <strong>Solicitudes de demostración</strong> — El listado incluye datos de ejemplo de <code>assets/data/demo-solicitudes.json</code> además de las solicitudes vinculadas a tu cuenta.
+        </div>
+        <p class="form-label" style="color: var(--color-zinc-600); margin-bottom: var(--space-4);" id="cli-resumen">Aquí aparecen las solicitudes enviadas con tu sesión iniciada.</p>
+
+        <div class="dashboard-card">
+            <div class="dashboard-card__header" style="justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span class="material-symbols-outlined" style="color: var(--color-primary);">list_alt</span>
+                    <h2 class="dashboard-card__title">Mis solicitudes</h2>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr>
+                            <th class="table__th">Folio</th>
+                            <th class="table__th">Cliente / empresa</th>
+                            <th class="table__th">Fecha</th>
+                            <th class="table__th">Estado</th>
+                            <th class="table__th">Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body" id="cli-solicitudes-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="cli-modal-detalle">
+        <div class="modal">
+            <div class="modal__header">
+                <h2 class="modal__title">Solicitud <span id="cli-id" style="color: var(--color-primary);"></span></h2>
+                <button type="button" class="modal__close material-symbols-outlined" id="cli-modal-close">close</button>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Cliente / empresa</label>
+                    <p id="cli-cliente" style="font-weight: 500; font-size: 1.4rem;"></p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Fecha</label>
+                    <p id="cli-fecha" style="font-weight: 500; font-size: 1.4rem;"></p>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Estado de atención</label>
+                    <p id="cli-estado-atencion" style="font-weight: 600; font-size: 1.4rem; color: var(--color-primary);"></p>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Equipo</label>
+                    <p id="cli-equipo" style="font-weight: 700; font-size: 1.4rem; color: var(--color-secondary);"></p>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Ubicación</label>
+                    <p id="cli-ubicacion" style="font-weight: 400; font-size: 1.4rem; color: var(--color-zinc-600);"></p>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Falla / observaciones</label>
+                    <p id="cli-observaciones" style="font-weight: 400; font-size: 1.4rem; color: var(--color-zinc-600);"></p>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Diagnóstico (taller)</label>
+                    <p id="cli-diagnostico" style="font-weight: 400; font-size: 1.4rem; color: var(--color-zinc-600);"></p>
+                </div>
+
+                <div class="form-group form-group--full" id="cli-gps-group" style="display: none;">
+                    <label class="form-label">Ubicación GPS</label>
+                    <div id="cli-gps-container" style="background: var(--color-zinc-100); padding: var(--space-2); border-radius: var(--radius-md); font-size: 1.2rem; color: var(--color-zinc-700);"></div>
+                </div>
+
+                <div class="form-group form-group--full" id="cli-specs-group" style="display: none;">
+                    <label class="form-label">Especificaciones</label>
+                    <div id="cli-specs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; background: var(--color-zinc-50); padding: var(--space-3); border-radius: var(--radius-md); font-size: 1.2rem; color: var(--color-zinc-700);"></div>
+                </div>
+
+                <div class="form-group form-group--full" id="cli-fotos-group" style="display: none;">
+                    <label class="form-label">Evidencia fotográfica</label>
+                    <div id="cli-fotos" style="display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-2);"></div>
+                </div>
+
+                <div class="form-group form-group--full">
+                    <label class="form-label">Comentarios del servicio</label>
+                    <div id="cli-comentarios-list" style="background: var(--color-zinc-50); border: 1px solid var(--color-zinc-200); border-radius: var(--radius-lg); padding: var(--space-4); max-height: 20rem; overflow-y: auto;">
+                    </div>
+                </div>
+
+                <div class="form-group--full" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-4); flex-wrap: wrap;">
+                    <button type="button" id="btn-download-pdf-cli" class="button button--secondary" style="display: none; align-items: center; gap: 0.5rem; background-color: var(--color-zinc-800); color: white;">
+                        <span class="material-symbols-outlined">download</span> Descargar PDF
+                    </button>
+                    <button type="button" class="button button--primary" id="cli-modal-btn-cerrar">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="bottom-nav__item bottom-nav__item--active">
+            <span class="material-symbols-outlined bottom-nav__icon">assignment</span>
+            <span class="bottom-nav__label">Mis solicitudes</span>
+        </div>
+        <div class="bottom-nav__item" id="nav-logout">
+            <span class="material-symbols-outlined bottom-nav__icon">logout</span>
+            <span class="bottom-nav__label">Salir</span>
+        </div>
+    </nav>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/demo-json-loader.js"></script>
+    <script src="./assets/js/solicitudes.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await window.CC_demoJsonReady;
+
+            const session = db.requireAuth('CLIENTE');
+            if (!session) return;
+
+            const banner = document.getElementById('demo-json-banner');
+            if (banner && SolicitudesManager.esDemoArchivoCargado()) {
+                banner.style.display = 'block';
+            }
+
+            const nombreEl = document.getElementById('cli-header-nombre');
+            if (nombreEl) nombreEl.textContent = session.nombre;
+
+            let currentId = null;
+
+            function renderCliComentarios(comentarios) {
+                const list = document.getElementById('cli-comentarios-list');
+                UI.clearElement(list);
+                if (!comentarios || comentarios.length === 0) {
+                    const p = document.createElement('p');
+                    p.style.color = 'var(--color-zinc-400)';
+                    p.style.fontSize = '1.2rem';
+                    p.textContent = 'Sin comentarios aún';
+                    list.appendChild(p);
+                    return;
+                }
+                comentarios.forEach((c) => {
+                    const block = document.createElement('div');
+                    block.style.marginBottom = '1rem';
+                    block.style.borderBottom = '1px solid var(--color-zinc-200)';
+                    block.style.paddingBottom = '0.5rem';
+                    const meta = document.createElement('div');
+                    meta.style.fontSize = '1rem';
+                    meta.style.color = 'var(--color-zinc-500)';
+                    const strong = document.createElement('strong');
+                    strong.style.color = 'var(--color-primary)';
+                    strong.textContent = c.autor;
+                    meta.appendChild(strong);
+                    meta.appendChild(document.createTextNode(' — ' + c.fecha));
+                    const body = document.createElement('div');
+                    body.style.fontSize = '1.4rem';
+                    body.style.color = 'var(--color-zinc-800)';
+                    body.textContent = c.texto;
+                    block.appendChild(meta);
+                    block.appendChild(body);
+                    list.appendChild(block);
+                });
+            }
+
+            function loadLista() {
+                const lista = SolicitudesManager.getByClienteUsuario(session.id)
+                    .slice()
+                    .sort((a, b) => String(b.fecha || '').localeCompare(String(a.fecha || '')));
+                const res = document.getElementById('cli-resumen');
+                if (res) {
+                    res.textContent = lista.length === 0
+                        ? 'Aún no tienes solicitudes vinculadas. Envía una desde “Nueva solicitud” con la sesión iniciada.'
+                        : `Tienes ${lista.length} solicitud(es) registradas con tu cuenta.`;
+                }
+                UI.renderSolicitudesTable('cli-solicitudes-tbody', lista, openDetalleCli);
+            }
+
+            function openDetalleCli(sol) {
+                currentId = sol.id;
+                UI.fillModalData(sol, 'cli');
+                renderCliComentarios(sol.comentarios);
+
+                const btnPdf = document.getElementById('btn-download-pdf-cli');
+                if (sol.pdf_document) {
+                    btnPdf.style.display = 'flex';
+                    btnPdf.onclick = () => UI.downloadSolicitudPdf(sol.pdf_document, sol);
+                } else {
+                    btnPdf.style.display = 'none';
+                }
+
+                UI.openModal('cli-modal-detalle');
+            }
+
+            const closeModal = () => UI.closeModal('cli-modal-detalle');
+            document.getElementById('cli-modal-close').addEventListener('click', closeModal);
+            document.getElementById('cli-modal-btn-cerrar').addEventListener('click', closeModal);
+
+            document.getElementById('cli-modal-detalle').addEventListener('click', (e) => {
+                if (e.target.id === 'cli-modal-detalle' || e.target.classList.contains('modal__close')) {
+                    closeModal();
+                }
+            });
+
+            loadLista();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Solicitud enviada | Cook &amp; Chill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .header--app { position: sticky; top: 0; z-index: 50; }
+        .exito-panel {
+            max-width: 48rem;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--space-8) var(--space-4);
+        }
+        .exito-panel__icon {
+            font-size: 7rem;
+            color: #16a34a;
+            display: block;
+            margin-bottom: var(--space-4);
+        }
+        .exito-panel__folio {
+            font-size: 3.6rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            letter-spacing: 0.06em;
+            margin: var(--space-3) 0 var(--space-6);
+            word-break: break-all;
+        }
+        .exito-panel__hint {
+            font-size: 1.4rem;
+            color: var(--color-zinc-600);
+            line-height: 1.5;
+            margin-bottom: var(--space-8);
+        }
+        .exito-panel__actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+        @media (min-width: 480px) {
+            .exito-panel__actions { flex-direction: row; justify-content: center; }
+        }
+    </style>
+</head>
+<body style="background-color: var(--color-background);">
+    <header class="header header--app">
+        <div class="header__inner container" style="height: 6.4rem; justify-content: flex-start; gap: var(--space-4);">
+            <a href="index.html" class="header__mobile-btn" style="display: flex;">
+                <span class="material-symbols-outlined">home</span>
+            </a>
+            <h1 class="header__title" style="font-size: var(--text-lg); color: var(--color-primary);">Solicitud registrada</h1>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div class="exito-panel">
+            <span id="exito-icon-ok" class="material-symbols-outlined exito-panel__icon" aria-hidden="true">check_circle</span>
+            <div id="exito-panel-ok">
+                <h2 class="modal__title" style="font-size: 2.8rem; color: var(--color-zinc-900); margin-bottom: var(--space-3);">Solicitud enviada exitosamente</h2>
+                <p class="exito-panel__hint">
+                    Por favor guarda tu <strong>número de folio</strong>. Lo necesitarás para cualquier seguimiento con Cook &amp; Chill.
+                </p>
+                <div class="dashboard-card" style="padding: var(--space-6); margin-bottom: var(--space-6);">
+                    <p style="font-size: 1.2rem; color: var(--color-zinc-500); text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 var(--space-2);">Tu folio</p>
+                    <p id="exito-folio" class="exito-panel__folio" role="status">—</p>
+                    <p style="font-size: 1.2rem; color: var(--color-zinc-600); margin: 0;">Hemos registrado tu solicitud en nuestro sistema.</p>
+                </div>
+            </div>
+
+            <div id="exito-panel-error" class="dashboard-card" style="display: none; padding: var(--space-6); margin-bottom: var(--space-6); text-align: center;">
+                <p style="font-size: 1.4rem; color: var(--color-zinc-700); margin: 0 0 var(--space-4);">No pudimos mostrar tu folio en esta pantalla. Si ya enviaste el formulario, revisa en el panel de administración o vuelve a enviar la solicitud.</p>
+                <a class="button button--primary" href="solicitud.html">Volver al formulario</a>
+            </div>
+
+            <div class="exito-panel__actions">
+                <a class="button button--primary button--large button--primary-shadow" href="index.html">Volver al inicio</a>
+                <a class="button button--outline button--large" href="cliente-panel.html">Ver mis solicitudes</a>
+                <a class="button button--outline button--large" href="solicitud.html">Enviar otra solicitud</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function aplicarFolioExito() {
+            const params = new URLSearchParams(window.location.search);
+            let folio = params.get('folio');
+            if (!folio || !String(folio).trim()) {
+                try {
+                    folio = sessionStorage.getItem('cc_ultimo_folio');
+                } catch (e1) {
+                    folio = null;
+                }
+            }
+            if (!folio || !String(folio).trim()) {
+                try {
+                    folio = localStorage.getItem('cc_ultimo_folio');
+                } catch (e2) {
+                    folio = null;
+                }
+            }
+            if (!folio || !String(folio).trim()) {
+                const h = window.location.hash || '';
+                if (h.startsWith('#folio=')) {
+                    folio = decodeURIComponent(h.slice('#folio='.length));
+                }
+            }
+
+            folio = folio ? String(folio).trim() : '';
+
+            const el = document.getElementById('exito-folio');
+            const panelOk = document.getElementById('exito-panel-ok');
+            const panelErr = document.getElementById('exito-panel-error');
+            const iconOk = document.getElementById('exito-icon-ok');
+
+            if (folio && el) {
+                el.textContent = folio;
+                if (panelOk) panelOk.style.display = 'block';
+                if (panelErr) panelErr.style.display = 'none';
+                if (iconOk) iconOk.style.display = 'block';
+                try {
+                    sessionStorage.removeItem('cc_ultimo_folio');
+                } catch (ignore) { /* ignore */ }
+                try {
+                    localStorage.removeItem('cc_ultimo_folio');
+                } catch (ignore2) { /* ignore */ }
+            } else {
+                if (panelOk) panelOk.style.display = 'none';
+                if (panelErr) panelErr.style.display = 'block';
+                if (iconOk) iconOk.style.display = 'none';
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', aplicarFolioExito);
+        } else {
+            aplicarFolioExito();
+        }
+    </script>
+</body>
+</html>

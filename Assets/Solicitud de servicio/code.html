@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0ea5e9", // Sky Blue 500
+                        "primary-container": "#e0f2fe", // Sky Blue 100
+                        "on-primary": "#ffffff",
+                        "secondary": "#455f88",
+                        "accent": "#f97316", // Orange 500 (CTA/Header)
+                        "on-accent": "#ffffff",
+                        "surface": "#f8fafc",
+                        "background": "#f1f5f9",
+                        "outline": "#94a3b8",
+                        "outline-variant": "#cbd5e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "form-row-height": "48px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "h2": ["Space Grotesk"],
+                        "h1": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "data-entry": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "h2": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "data-entry": ["15px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    },
+                    "boxShadow": {
+                        "sky": "0 4px 14px -2px rgba(14, 165, 233, 0.12)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .signature-pad {
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 31px, #e2e8f0 31px, #e2e8f0 32px);
+            background-size: 100% 32px;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-slate-800 font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-950 flex justify-between items-center w-full px-4 h-16 sticky top-0 border-b border-slate-200 dark:border-slate-800 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent" data-icon="menu">menu</span>
+<div class="text-lg font-black text-accent uppercase font-['Space_Grotesk']">Cook and Chill</div>
+</div>
+<h1 class="font-['Space_Grotesk'] font-bold tracking-tight text-accent">Orden de Servicio</h1>
+<div class="w-8 flex items-center justify-end">
+<!-- Avatar removed per request -->
+</div>
+</header>
+<main class="max-w-4xl mx-auto p-4 space-y-6 pb-32">
+<!-- Info Section: Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 bg-white border border-transparent shadow-sky p-md rounded-xl space-y-4">
+<div class="flex items-center gap-2 border-b border-slate-100 pb-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<h2 class="font-h2 text-h2 uppercase tracking-wide text-slate-700">Información del Cliente</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps text-outline uppercase">Cliente</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 font-data-entry text-data-entry focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="Restaurante El Gourmet"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps text-outline uppercase">Fecha</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 font-data-entry text-data-entry focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="date" value="2023-10-27"/>
+</div>
+<div class="sm:col-span-2 space-y-1">
+<label class="font-label-caps text-label-caps text-outline uppercase">Ubicación</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 font-data-entry text-data-entry focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="Av. Insurgentes Sur 1234, CDMX"/>
+</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-md rounded-xl flex flex-col justify-between shadow-lg shadow-sky/20">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+<h2 class="font-h2 text-h2 uppercase">Equipo</h2>
+</div>
+<div class="space-y-3">
+<div class="border-b border-white/20 pb-1">
+<label class="text-[10px] uppercase font-bold opacity-80">Marca / Modelo</label>
+<p class="font-bold">Rational / iCombi Pro 6</p>
+</div>
+<div class="border-b border-white/20 pb-1">
+<label class="text-[10px] uppercase font-bold opacity-80">Serie</label>
+<p class="font-bold">SN-202399182</p>
+</div>
+<div class="pb-1">
+<label class="text-[10px] uppercase font-bold opacity-80">Distribuidor</label>
+<p class="font-bold">Equipos Pro S.A.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Status Chips & Service Type -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-white border border-transparent shadow-sky p-md rounded-xl">
+<label class="font-label-caps text-label-caps text-outline uppercase mb-3 block">Garantía</label>
+<div class="flex gap-2">
+<button class="flex-1 py-2 rounded-lg bg-primary text-on-primary font-bold uppercase text-xs">Vigente</button>
+<button class="flex-1 py-2 rounded-lg bg-slate-100 text-slate-400 font-bold uppercase text-xs">Expirada</button>
+</div>
+</div>
+<div class="bg-white border border-transparent shadow-sky p-md rounded-xl">
+<label class="font-label-caps text-label-caps text-outline uppercase mb-3 block">Tipo de Servicio</label>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase border border-blue-200">Revision</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 text-slate-400 text-[10px] font-bold uppercase opacity-60">Reparacion</span>
+<span class="px-3 py-1 rounded-full bg-slate-100 text-slate-400 text-[10px] font-bold uppercase opacity-60">Mantenimiento</span>
+</div>
+</div>
+</section>
+<!-- Diagnóstico -->
+<section class="bg-white border border-transparent shadow-sky p-md rounded-xl space-y-3">
+<div class="flex items-center gap-2 border-b border-slate-100 pb-2">
+<span class="material-symbols-outlined text-primary" data-icon="troubleshoot">troubleshoot</span>
+<h2 class="font-h2 text-h2 uppercase text-slate-700">Diagnóstico Técnico</h2>
+</div>
+<textarea class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 font-data-entry text-data-entry focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none" placeholder="Describa la falla reportada y hallazgos iniciales..." rows="4"></textarea>
+</section>
+<!-- Technical Specs Grid -->
+<section class="bg-primary-container p-md rounded-xl">
+<h2 class="font-label-caps text-label-caps text-primary uppercase mb-4 text-center">Especificaciones Técnicas Registradas</h2>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div class="bg-white p-2 rounded-lg border border-transparent shadow-sm text-center">
+<label class="block text-[9px] text-outline font-bold uppercase">Amperaje</label>
+<input class="w-full text-center font-bold border-none p-0 focus:ring-0 bg-transparent" placeholder="-- A" type="text"/>
+</div>
+<div class="bg-white p-2 rounded-lg border border-transparent shadow-sm text-center">
+<label class="block text-[9px] text-outline font-bold uppercase">Voltaje</label>
+<input class="w-full text-center font-bold border-none p-0 focus:ring-0 bg-transparent" placeholder="-- V" type="text"/>
+</div>
+<div class="bg-white p-2 rounded-lg border border-transparent shadow-sm text-center">
+<label class="block text-[9px] text-outline font-bold uppercase">Presión</label>
+<input class="w-full text-center font-bold border-none p-0 focus:ring-0 bg-transparent" placeholder="-- PSI" type="text"/>
+</div>
+<div class="bg-white p-2 rounded-lg border border-transparent shadow-sm text-center">
+<label class="block text-[9px] text-outline font-bold uppercase">Temp. Amb</label>
+<input class="w-full text-center font-bold border-none p-0 focus:ring-0 bg-transparent" placeholder="-- °C" type="text"/>
+</div>
+<div class="bg-white p-2 rounded-lg border border-transparent shadow-sm text-center col-span-2 md:col-span-1">
+<label class="block text-[9px] text-outline font-bold uppercase">Temp. Cabina</label>
+<input class="w-full text-center font-bold border-none p-0 focus:ring-0 bg-transparent" placeholder="-- °C" type="text"/>
+</div>
+</div>
+</section>
+<!-- GPS Map View -->
+<section class="bg-white border border-transparent shadow-sky overflow-hidden rounded-xl">
+<div class="p-md border-b border-slate-100 bg-slate-50 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="distance">distance</span>
+<h2 class="font-h2 text-h2 uppercase text-slate-700">Ubicación GPS</h2>
+</div>
+<span class="text-[10px] font-bold text-outline uppercase">Precisión: +/- 5m</span>
+</div>
+<div class="h-48 w-full bg-slate-100 relative">
+<img class="w-full h-full object-cover grayscale contrast-125 opacity-80" data-alt="A clean, minimalist digital map showing a precise location pin in an urban grid of Mexico City. The map uses a sophisticated monochrome light-mode color scheme with subtle orange accents for the location marker. The visual style is professional, technical, and high-fidelity, matching a corporate service application dashboard." data-location="Mexico City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJVZU4iRSXz9m-_HaktjHodSD0fUQ4hHG5rmMl9q1DoXx-PCu-k--f4hD9PylAS20aRZR2MBtqOhL-3F9-uGjislmyzwPD3u_3trNAy94112vJP-T5POxHv1IwtiS3LJi0FmBvw_35-3Hv5T_k6YoPx-dDMBQ-pKg4tmqvJ5WT13F3ZHPJoCREm8N-KI6BvwZTX2rBu2tLJyETRRhpJ_HfxPa0m7vbCGmPXVIIw6Vekor0_Hlg5N4Tfv7sTOraX4083rWBT7pHgnQT"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-accent text-white p-2 rounded-full shadow-lg pulse">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Refacciones: Technical Table -->
+<section class="bg-white border border-transparent shadow-sky rounded-xl overflow-hidden">
+<div class="bg-slate-900 text-white p-3 flex justify-between items-center">
+<h2 class="font-h2 text-h2 uppercase text-sm">Refacciones y Cotización</h2>
+<button class="bg-accent hover:bg-orange-600 px-3 py-1 rounded-lg text-[10px] font-bold uppercase transition-colors shadow-sm">+ Agregar</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 font-label-caps text-[10px] text-outline uppercase">
+<tr>
+<th class="p-4">Código/Descripción</th>
+<th class="p-4">Cant</th>
+<th class="p-4 text-right">Precio</th>
+</tr>
+</thead>
+<tbody class="font-data-entry text-sm divide-y divide-slate-100">
+<tr class="hover:bg-slate-50/50">
+<td class="p-4">40.00.123 - Sensor de Temperatura PT100</td>
+<td class="p-4">1</td>
+<td class="p-4 text-right">$1,250.00</td>
+</tr>
+<tr class="bg-slate-50/30 hover:bg-slate-50/50">
+<td class="p-4">22.01.445 - Empaque de Puerta Pro 6</td>
+<td class="p-4">1</td>
+<td class="p-4 text-right">$3,400.00</td>
+</tr>
+<tr class="font-bold text-primary">
+<td class="p-4 text-right uppercase" colspan="2">Total Estimado</td>
+<td class="p-4 text-right">$4,650.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Photo Evidence -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-outline uppercase">Foto del Equipo</label>
+<div class="aspect-video bg-white border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all cursor-pointer shadow-sky">
+<span class="material-symbols-outlined text-3xl mb-2" data-icon="add_a_photo">add_a_photo</span>
+<span class="text-[10px] font-bold uppercase">Subir Imagen</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-outline uppercase">Foto de Placa de Especificaciones</label>
+<div class="aspect-video bg-white border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all cursor-pointer shadow-sky">
+<span class="material-symbols-outlined text-3xl mb-2" data-icon="camera">camera</span>
+<span class="text-[10px] font-bold uppercase">Subir Imagen</span>
+</div>
+</div>
+</section>
+<!-- Observaciones -->
+<section class="bg-white border border-transparent shadow-sky p-md rounded-xl space-y-3">
+<label class="font-label-caps text-label-caps text-outline uppercase">Observaciones Adicionales</label>
+<textarea class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 font-data-entry text-data-entry focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none" placeholder="Notas internas o recomendaciones al cliente..." rows="3"></textarea>
+</section>
+<!-- Signatures -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-white border border-transparent shadow-sky p-md rounded-xl space-y-4">
+<label class="font-label-caps text-label-caps text-primary uppercase text-center block">Firma del Técnico</label>
+<div class="signature-pad h-32 w-full border border-slate-100 rounded-lg bg-slate-50 relative flex items-end justify-center pb-2">
+<span class="text-[9px] text-slate-400 uppercase font-mono">ID: TECH-0092 | 27/10/23 14:22</span>
+</div>
+<p class="text-center font-bold text-xs">ING. ROBERTO GÓMEZ</p>
+</div>
+<div class="bg-white border border-transparent shadow-sky p-md rounded-xl space-y-4">
+<label class="font-label-caps text-label-caps text-primary uppercase text-center block">Firma del Cliente</label>
+<div class="signature-pad h-32 w-full border border-dashed border-slate-200 rounded-lg bg-slate-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-300 text-4xl" data-icon="draw">draw</span>
+</div>
+<p class="text-center font-bold text-xs uppercase text-outline">Capturar Firma Aquí</p>
+</div>
+</section>
+<!-- Submit Action -->
+<div class="pt-6">
+<button class="w-full bg-accent text-on-accent py-4 rounded-xl font-bold uppercase tracking-widest text-lg shadow-lg shadow-accent/20 active:scale-[0.98] transition-transform">
+            Finalizar y Enviar Reporte
+        </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full px-6 py-8 flex flex-col items-center text-center space-y-4 mb-20 border-t border-slate-200 dark:border-slate-800">
+<div class="font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+        servicios@cookandchill.com.mx
+    </div>
+<p class="font-['Space_Grotesk'] text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
+        © Cook and Chill Technical Service. All rights reserved. La presente orden de servicio certifica la intervención técnica realizada. Cualquier reclamación posterior deberá presentarse con el folio correspondiente dentro de los próximos 30 días.
+    </p>
+<div class="flex gap-4">
+<a class="text-slate-500 hover:text-primary transition-colors text-[11px] font-bold uppercase tracking-wider" href="#">Privacidad</a>
+<a class="text-slate-500 hover:text-primary transition-colors text-[11px] font-bold uppercase tracking-wider" href="#">Soporte Técnico</a>
+<a class="text-slate-500 hover:text-primary transition-colors text-[11px] font-bold uppercase tracking-wider" href="#">Aviso Legal</a>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flat no shadows">
+<div class="flex flex-col items-center justify-center bg-sky-50 dark:bg-sky-950/50 text-primary dark:text-sky-400 rounded-lg px-3 py-1 active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-wider">Servicios</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 hover:text-primary dark:hover:text-sky-300 active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-wider">Historial</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 hover:text-primary dark:hover:text-sky-300 active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="distance">distance</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-wider">Mapa</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 hover:text-primary dark:hover:text-sky-300 active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-wider">Perfil</span>
+</div>
+</nav>
+</body></html>
