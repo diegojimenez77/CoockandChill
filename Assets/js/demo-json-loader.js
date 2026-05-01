@@ -1,5 +1,5 @@
 /**
- * Carga siempre las solicitudes de ejemplo desde assets/data/demo-solicitudes.json.
+ * Carga siempre las solicitudes de ejemplo desde Assets/data/demo-solicitudes.json.
  * Se combinan en memoria con las guardadas en localStorage (fol SOL-DEMO-*: solo lectura).
  * Desactivar con ?sin_demo_json=1 si hiciera falta depurar sin el archivo.
  */
@@ -11,7 +11,7 @@
         return;
     }
 
-    const jsonUrl = new URL('assets/data/demo-solicitudes.json', window.location.href);
+    const jsonUrl = new URL('Assets/data/demo-solicitudes.json', window.location.href);
     window.CC_demoJsonReady = fetch(jsonUrl.href)
         .then((res) => {
             if (!res.ok) {

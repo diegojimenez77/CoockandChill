@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Limpiar datos | Cook &amp; Chill</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="./assets/css/styles.css"/>
+    <link rel="stylesheet" href="./Assets/css/styles.css"/>
     <style>
         body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: var(--space-4); background: var(--color-surface-container); }
         .limpiar-card { background: var(--color-white); padding: var(--space-8); border-radius: var(--radius-2xl); max-width: 48rem; box-shadow: var(--shadow-xl); text-align: center; }
@@ -18,7 +18,7 @@
         <p id="limpiar-msg">Se vaciaron todas las solicitudes y se cerró la sesión en este navegador. Los usuarios registrados (admin, técnicos, clientes) no se modificaron.</p>
         <a class="button button--primary button--primary-shadow" href="index.html">Ir al inicio</a>
     </div>
-    <script src="./assets/js/app.js"></script>
+    <script src="./Assets/js/app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof db !== 'undefined' && typeof db.resetSolicitudesYLimpiarSesion === 'function') {

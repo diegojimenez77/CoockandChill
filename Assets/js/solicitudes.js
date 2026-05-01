@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
 
                 const img = new Image();
-                img.src = './assets/Machote 2023.png';
+                img.src = './Assets/Machote 2023.png';
 
                 await new Promise((resolve) => {
                     img.onload = resolve;
