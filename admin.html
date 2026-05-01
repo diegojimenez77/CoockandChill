@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Panel Administrador | Cook &amp; Chill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .header--app { position: sticky; top: 0; z-index: 50; }
+    </style>
+</head>
+<body style="background-color: var(--color-background);">
+    <header class="header header--app">
+        <div class="header__inner container">
+            <div class="header__brand">
+                <span class="material-symbols-outlined" style="color: var(--color-primary);">shield_person</span>
+                <span class="header__title" style="font-size: var(--text-lg); margin-left: var(--space-2);">Admin Panel</span>
+            </div>
+            <div class="header__actions" style="display: flex;">
+                <span class="badge badge--gray-active" id="admin-name">Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div id="demo-json-banner" class="dashboard-card" style="display: none; margin-bottom: var(--space-4); padding: var(--space-4); background: #fef9c3; border: 1px solid #eab308; color: #713f12; font-size: 1.3rem; line-height: 1.45;">
+            <strong>Solicitudes de demostración</strong> — Se muestran automáticamente los datos de <code style="background: rgba(255,255,255,0.6); padding: 0.1rem 0.4rem; border-radius: var(--radius-sm);">assets/data/demo-solicitudes.json</code> junto con las tuyas guardadas en el navegador. Los folios <strong>SOL-DEMO-</strong>* no se pueden editar aquí. Sin HTTP (servidor local) el archivo puede no cargarse.
+        </div>
+        <!-- Métricas -->
+        <h2 class="form-label" style="margin-bottom: var(--space-4);">Resumen General</h2>
+        <div class="dashboard-grid dashboard-grid--metrics" style="margin-bottom: var(--space-8);">
+            <div class="dashboard-card dashboard-card--primary">
+                <span class="form-label" style="color: rgba(255,255,255,0.8);">Total</span>
+                <span class="dashboard-card__title" style="font-size: 3.6rem;" id="metric-total">0</span>
+            </div>
+            <div class="dashboard-card" style="border-left: 4px solid #64748b;">
+                <span class="form-label">Enviadas</span>
+                <span class="dashboard-card__title" style="font-size: 3.6rem;" id="metric-enviadas">0</span>
+            </div>
+            <div class="dashboard-card" style="border-left: 4px solid var(--color-error);">
+                <span class="form-label">En revisión</span>
+                <span class="dashboard-card__title" style="font-size: 3.6rem;" id="metric-en_revision">0</span>
+            </div>
+            <div class="dashboard-card" style="border-left: 4px solid #ca8a04;">
+                <span class="form-label">Asignadas / En proceso</span>
+                <span class="dashboard-card__title" style="font-size: 3.6rem;" id="metric-asignadas_proceso">0</span>
+            </div>
+            <div class="dashboard-card" style="border-left: 4px solid #15803d;">
+                <span class="form-label">Cerradas</span>
+                <span class="dashboard-card__title" style="font-size: 3.6rem;" id="metric-cerradas">0</span>
+            </div>
+        </div>
+
+        <h2 class="form-label" style="margin-bottom: var(--space-4);">Solicitudes por técnico</h2>
+        <div id="por-tecnico-wrap" class="dashboard-grid" style="margin-bottom: var(--space-8);"></div>
+
+        <!-- Tabla Solicitudes -->
+        <div class="dashboard-card">
+            <div class="dashboard-card__header" style="justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span class="material-symbols-outlined" style="color: var(--color-primary);">list_alt</span>
+                    <h2 class="dashboard-card__title">Todas las Solicitudes</h2>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr>
+                            <th class="table__th">Folio</th>
+                            <th class="table__th">Cliente</th>
+                            <th class="table__th">Fecha</th>
+                            <th class="table__th">Estado</th>
+                            <th class="table__th">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body" id="solicitudes-tbody">
+                        <!-- Llenado con JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Detalles -->
+    <div class="modal-overlay" id="modal-detalle">
+        <div class="modal">
+            <div class="modal__header">
+                <h2 class="modal__title">Detalle de Solicitud <span id="modal-id" style="color: var(--color-primary);"></span></h2>
+                <button class="modal__close material-symbols-outlined" onclick="UI.closeModal('modal-detalle')">close</button>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Cliente</label>
+                    <p id="modal-cliente" style="font-weight: 500; font-size: 1.4rem;"></p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Fecha</label>
+                    <p id="modal-fecha" style="font-weight: 500; font-size: 1.4rem;"></p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Estado de atención</label>
+                    <p id="modal-estado-atencion" style="font-weight: 600; font-size: 1.4rem; color: var(--color-primary);"></p>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Equipo</label>
+                    <p id="modal-equipo" style="font-weight: 700; font-size: 1.4rem; color: var(--color-secondary);"></p>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Falla / Observaciones</label>
+                    <p id="modal-observaciones" style="font-weight: 400; font-size: 1.4rem; color: var(--color-zinc-600);"></p>
+                </div>
+
+                <div class="form-group form-group--full" id="modal-gps-group" style="display: none;">
+                    <label class="form-label">Ubicación GPS</label>
+                    <div id="modal-gps-container" style="background: var(--color-zinc-100); padding: var(--space-2); border-radius: var(--radius-md); font-size: 1.2rem; color: var(--color-zinc-700);"></div>
+                </div>
+
+                <div class="form-group form-group--full" id="modal-specs-group" style="display: none;">
+                    <label class="form-label">Especificaciones Adicionales</label>
+                    <div id="modal-specs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; background: var(--color-zinc-50); padding: var(--space-3); border-radius: var(--radius-md); font-size: 1.2rem; color: var(--color-zinc-700);"></div>
+                </div>
+
+                <div class="form-group form-group--full" id="modal-fotos-group" style="display: none;">
+                    <label class="form-label">Evidencia Fotográfica</label>
+                    <div id="modal-fotos" style="display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-2);"></div>
+                </div>
+                
+                <hr class="form-group--full" style="border: none; border-top: 1px solid var(--color-zinc-200); margin: var(--space-4) 0;">
+                
+                <div class="form-group">
+                    <label class="form-label form-label--primary">Asignar Técnico</label>
+                    <select id="modal-tecnico" class="form-input form-select">
+                        <option value="">Sin asignar</option>
+                        <!-- Llenado con JS -->
+                    </select>
+                </div>
+                
+                <div class="form-group form-group--full">
+                    <label class="form-label form-label--primary">Añadir Comentario</label>
+                    <div style="display: flex; gap: var(--space-2);">
+                        <input type="text" id="modal-nuevo-comentario" class="form-input" placeholder="Escribe un comentario...">
+                        <button id="btn-add-comment" class="button button--primary">Añadir</button>
+                    </div>
+                </div>
+
+                <div class="form-group form-group--full">
+                    <label class="form-label">Historial de Comentarios</label>
+                    <div id="modal-comentarios-list" style="background: var(--color-zinc-50); border: 1px solid var(--color-zinc-200); border-radius: var(--radius-lg); padding: var(--space-4); max-height: 20rem; overflow-y: auto;">
+                        <!-- JS -->
+                    </div>
+                </div>
+                
+                <div class="form-group--full" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-4);">
+                    <button type="button" id="btn-download-pdf-admin" class="button button--secondary" style="display: none; align-items: center; gap: 0.5rem; background-color: var(--color-zinc-800); color: white;"><span class="material-symbols-outlined">download</span> Descargar PDF</button>
+                    <div style="display: flex; gap: var(--space-4);">
+                        <button class="button button--white" onclick="UI.closeModal('modal-detalle')">Cerrar</button>
+                        <button id="btn-save-asignacion" class="button button--primary button--primary-shadow">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BottomNavBar -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav__item bottom-nav__item--active">
+            <span class="material-symbols-outlined bottom-nav__icon">dashboard</span>
+            <span class="bottom-nav__label">Panel</span>
+        </div>
+        <div class="bottom-nav__item" id="nav-logout">
+            <span class="material-symbols-outlined bottom-nav__icon">logout</span>
+            <span class="bottom-nav__label">Salir</span>
+        </div>
+    </nav>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/demo-json-loader.js"></script>
+    <script src="./assets/js/solicitudes.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await window.CC_demoJsonReady;
+
+            const session = db.requireAuth('ADMIN');
+            if (!session) return;
+
+            const banner = document.getElementById('demo-json-banner');
+            if (banner && SolicitudesManager.esDemoArchivoCargado()) {
+                banner.style.display = 'block';
+            }
+
+            document.getElementById('admin-name').textContent = session.nombre;
+
+            let currentSolId = null;
+
+            function renderPorTecnico() {
+                const wrap = document.getElementById('por-tecnico-wrap');
+                if (!wrap) return;
+                UI.clearElement(wrap);
+                const usuariosList = Array.isArray(db.get(DB_KEYS.USUARIOS)) ? db.get(DB_KEYS.USUARIOS) : [];
+                const tecnicos = usuariosList.filter((u) => u.rol === 'TECNICO');
+                const all = SolicitudesManager.getAll();
+                if (tecnicos.length === 0) {
+                    const p = document.createElement('p');
+                    p.className = 'form-label';
+                    p.style.color = 'var(--color-zinc-500)';
+                    p.textContent = 'No hay técnicos registrados.';
+                    wrap.appendChild(p);
+                    return;
+                }
+                tecnicos.forEach((t) => {
+                    const asignadas = all.filter((s) => String(s.tecnico_id) === String(t.id));
+                    const card = document.createElement('div');
+                    card.className = 'dashboard-card';
+                    const h3 = document.createElement('h3');
+                    h3.className = 'dashboard-card__title';
+                    h3.textContent = t.nombre;
+                    const count = document.createElement('p');
+                    count.style.fontSize = '1.4rem';
+                    count.style.margin = '0';
+                    count.textContent = `Asignadas: ${asignadas.length}`;
+                    const ul = document.createElement('ul');
+                    ul.style.fontSize = '1.2rem';
+                    ul.style.margin = '0';
+                    ul.style.paddingLeft = '1.6rem';
+                    asignadas.slice(0, 8).forEach((s) => {
+                        const li = document.createElement('li');
+                        li.textContent = `${s.id} — ${s.cliente} (${UI.formatEstadoAtencion(s.estado)})`;
+                        ul.appendChild(li);
+                    });
+                    card.appendChild(h3);
+                    card.appendChild(count);
+                    card.appendChild(ul);
+                    wrap.appendChild(card);
+                });
+            }
+
+            function loadDashboard() {
+                SolicitudesManager.promoteEnviasARevision();
+                const metrics = SolicitudesManager.getMetrics();
+                UI.renderMetrics(metrics, 'metric');
+                const solicitudes = SolicitudesManager.getAll();
+                UI.renderSolicitudesTable('solicitudes-tbody', solicitudes, openDetalle);
+                renderPorTecnico();
+            }
+
+            function fillTecnicosSelect(select, sol) {
+                UI.clearElement(select);
+                const def = document.createElement('option');
+                def.value = '';
+                def.textContent = 'Sin asignar';
+                select.appendChild(def);
+                const usuariosList = Array.isArray(db.get(DB_KEYS.USUARIOS)) ? db.get(DB_KEYS.USUARIOS) : [];
+                const tecnicos = usuariosList.filter((u) => u.rol === 'TECNICO');
+                tecnicos.forEach((t) => {
+                    const opt = document.createElement('option');
+                    opt.value = String(t.id);
+                    opt.textContent = t.nombre;
+                    if (String(sol.tecnico_id) === String(t.id)) opt.selected = true;
+                    select.appendChild(opt);
+                });
+            }
+
+            function openDetalle(sol) {
+                currentSolId = sol.id;
+                UI.fillModalData(sol, 'modal');
+                const select = document.getElementById('modal-tecnico');
+                fillTecnicosSelect(select, sol);
+                renderComentarios(sol.comentarios);
+
+                const btnPdf = document.getElementById('btn-download-pdf-admin');
+                if (sol.pdf_document) {
+                    btnPdf.style.display = 'flex';
+                    btnPdf.onclick = () => UI.downloadSolicitudPdf(sol.pdf_document, sol);
+                } else {
+                    btnPdf.style.display = 'none';
+                }
+
+                UI.openModal('modal-detalle');
+            }
+
+            function renderComentarios(comentarios) {
+                const list = document.getElementById('modal-comentarios-list');
+                UI.clearElement(list);
+                if (!comentarios || comentarios.length === 0) {
+                    const p = document.createElement('p');
+                    p.style.color = 'var(--color-zinc-400)';
+                    p.style.fontSize = '1.2rem';
+                    p.textContent = 'No hay comentarios';
+                    list.appendChild(p);
+                    return;
+                }
+                comentarios.forEach((c) => {
+                    const block = document.createElement('div');
+                    block.style.marginBottom = '1rem';
+                    block.style.borderBottom = '1px solid var(--color-zinc-200)';
+                    block.style.paddingBottom = '0.5rem';
+                    const meta = document.createElement('div');
+                    meta.style.fontSize = '1rem';
+                    meta.style.color = 'var(--color-zinc-500)';
+                    const strong = document.createElement('strong');
+                    strong.style.color = 'var(--color-primary)';
+                    strong.textContent = c.autor;
+                    meta.appendChild(strong);
+                    meta.appendChild(document.createTextNode(' — ' + c.fecha));
+                    const body = document.createElement('div');
+                    body.style.fontSize = '1.4rem';
+                    body.style.color = 'var(--color-zinc-800)';
+                    body.textContent = c.texto;
+                    block.appendChild(meta);
+                    block.appendChild(body);
+                    list.appendChild(block);
+                });
+            }
+
+            document.getElementById('btn-add-comment').addEventListener('click', () => {
+                const input = document.getElementById('modal-nuevo-comentario');
+                if (input.value.trim() && currentSolId) {
+                    if (SolicitudesManager.esSolicitudDemoArchivo(currentSolId)) {
+                        UI.showToast('Los folios de demostración (SOL-DEMO-*) vienen del archivo JSON y no se pueden modificar aquí.', true);
+                        return;
+                    }
+                    const ok = SolicitudesManager.addComentario(currentSolId, input.value.trim(), session.nombre);
+                    if (!ok) {
+                        UI.showToast('No se pudo guardar el comentario.', true);
+                        return;
+                    }
+                    input.value = '';
+                    const sol = SolicitudesManager.getById(currentSolId);
+                    renderComentarios(sol.comentarios);
+                }
+            });
+
+            document.getElementById('btn-save-asignacion').addEventListener('click', () => {
+                const select = document.getElementById('modal-tecnico');
+                const raw = select.value;
+                const tecId = raw === '' ? null : Number(raw);
+                if (!currentSolId) return;
+                if (SolicitudesManager.esSolicitudDemoArchivo(currentSolId)) {
+                    UI.showToast('Los folios SOL-DEMO-* son solo lectura (archivo demo-solicitudes.json).', true);
+                    return;
+                }
+                const sol = SolicitudesManager.getById(currentSolId);
+                const updateData = { tecnico_id: tecId };
+                if (tecId !== null) {
+                    if (sol.estado === 'ENVIADA' || sol.estado === 'EN_REVISION' || sol.estado === 'PENDIENTE') {
+                        updateData.estado = 'ASIGNADA';
+                    }
+                } else if (sol.estado === 'ASIGNADA' || sol.estado === 'EN_PROCESO' || sol.estado === 'ASIGNADO') {
+                    updateData.estado = 'EN_REVISION';
+                }
+                try {
+                    SolicitudesManager.update(currentSolId, updateData);
+                } catch (err) {
+                    UI.showToast('No se pudo guardar. Comprueba el espacio del navegador.', true);
+                    return;
+                }
+                UI.showToast('Cambios guardados.');
+                UI.closeModal('modal-detalle');
+                loadDashboard();
+            });
+
+            loadDashboard();
+        });
+    </script>
+</body>
+</html>

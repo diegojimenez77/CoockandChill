@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Panel Técnico | Cook &amp; Chill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .header--app { position: sticky; top: 0; z-index: 50; }
+    </style>
+</head>
+<body style="background-color: var(--color-background);">
+    <header class="header header--app">
+        <div class="header__inner container">
+            <div class="header__brand">
+                <span class="material-symbols-outlined" style="color: var(--color-secondary);">engineering</span>
+                <span class="header__title" style="font-size: var(--text-lg); margin-left: var(--space-2);">Portal Técnico</span>
+            </div>
+            <div class="header__actions" style="display: flex;">
+                <span class="badge badge--gray-active" id="tec-name">Técnico</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div id="demo-json-banner" class="dashboard-card" style="display: none; margin-bottom: var(--space-4); padding: var(--space-4); background: #fef9c3; border: 1px solid #eab308; color: #713f12; font-size: 1.3rem; line-height: 1.45;">
+            <strong>Solicitudes de demostración</strong> — Mismo listado que admin: <code>assets/data/demo-solicitudes.json</code> + tus datos locales. Folios <strong>SOL-DEMO-</strong>* no editables.
+        </div>
+        <!-- Métricas -->
+        <h2 class="form-label" style="margin-bottom: var(--space-4);">Tus Estadísticas</h2>
+        <div class="dashboard-grid dashboard-grid--2col" style="margin-bottom: var(--space-8);">
+            <div class="dashboard-card dashboard-card--primary" style="background-color: var(--color-secondary);">
+                <span class="form-label" style="color: rgba(255,255,255,0.8);">Asignadas</span>
+                <span class="dashboard-card__title" style="font-size: 3.6rem;" id="metric-asignadas">0</span>
+            </div>
+            <div class="dashboard-card" style="border-left: 4px solid #15803d;">
+                <span class="form-label">Completadas</span>
+                <span class="dashboard-card__title" style="font-size: 3.6rem;" id="metric-completadas">0</span>
+            </div>
+        </div>
+
+        <!-- Tabla Solicitudes -->
+        <div class="dashboard-card">
+            <div class="dashboard-card__header" style="justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span class="material-symbols-outlined" style="color: var(--color-secondary);">list_alt</span>
+                    <h2 class="dashboard-card__title">Servicios Asignados</h2>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr>
+                            <th class="table__th">Folio</th>
+                            <th class="table__th">Cliente</th>
+                            <th class="table__th">Fecha</th>
+                            <th class="table__th">Estado</th>
+                            <th class="table__th">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body" id="solicitudes-tbody">
+                        <!-- Llenado con JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Acción -->
+    <div class="modal-overlay" id="modal-detalle">
+        <div class="modal">
+            <div class="modal__header">
+                <h2 class="modal__title">Servicio <span id="modal-id" style="color: var(--color-secondary);"></span></h2>
+                <button class="modal__close material-symbols-outlined" onclick="UI.closeModal('modal-detalle')">close</button>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Cliente / Ubicación</label>
+                    <p id="modal-cliente" style="font-weight: 500; font-size: 1.4rem;"></p>
+                    <p id="modal-ubicacion" style="font-size: 1.2rem; color: var(--color-zinc-500);"></p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Equipo</label>
+                    <p id="modal-equipo" style="font-weight: 700; font-size: 1.4rem; color: var(--color-secondary);"></p>
+                </div>
+                
+                <div class="form-group form-group--full">
+                    <label class="form-label">Reporte Inicial</label>
+                    <p id="modal-observaciones" style="background: var(--color-zinc-50); padding: var(--space-2); border-radius: var(--radius-md); font-size: 1.3rem;"></p>
+                </div>
+
+                <div class="form-group form-group--full">
+                    <label class="form-label">Estado de atención</label>
+                    <p id="modal-estado-atencion" style="font-weight: 600; font-size: 1.4rem; color: var(--color-secondary);"></p>
+                </div>
+
+                <div class="form-group form-group--full" id="modal-gps-group" style="display: none;">
+                    <label class="form-label">Ubicación GPS</label>
+                    <div id="modal-gps-container" style="background: var(--color-zinc-100); padding: var(--space-2); border-radius: var(--radius-md); font-size: 1.2rem; color: var(--color-zinc-700);"></div>
+                </div>
+
+                <div class="form-group form-group--full" id="modal-specs-group" style="display: none;">
+                    <label class="form-label">Especificaciones Adicionales</label>
+                    <div id="modal-specs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; background: var(--color-zinc-50); padding: var(--space-3); border-radius: var(--radius-md); font-size: 1.2rem; color: var(--color-zinc-700);"></div>
+                </div>
+
+                <div class="form-group form-group--full" id="modal-fotos-group" style="display: none;">
+                    <label class="form-label">Evidencia Fotográfica</label>
+                    <div id="modal-fotos" style="display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-2);"></div>
+                </div>
+                
+                <hr class="form-group--full" style="border: none; border-top: 1px solid var(--color-zinc-200); margin: var(--space-4) 0;">
+                
+                <div class="form-group form-group--full">
+                    <label class="form-label form-label--primary" style="color: var(--color-secondary);">Añadir comentario</label>
+                    <div style="display: flex; gap: var(--space-2);">
+                        <input type="text" id="tec-modal-nuevo-comentario" class="form-input" placeholder="Escribe un comentario...">
+                        <button type="button" id="btn-tec-add-comment" class="button button--primary" style="background-color: var(--color-secondary);">Añadir</button>
+                    </div>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Historial de comentarios</label>
+                    <div id="tec-modal-comentarios-list" style="background: var(--color-zinc-50); border: 1px solid var(--color-zinc-200); border-radius: var(--radius-lg); padding: var(--space-4); max-height: 16rem; overflow-y: auto;"></div>
+                </div>
+                
+                <hr class="form-group--full" style="border: none; border-top: 1px solid var(--color-zinc-200); margin: var(--space-2) 0;">
+
+                <div class="form-group form-group--full">
+                    <label class="form-label form-label--primary" style="color: var(--color-secondary);">Actualizar Estado</label>
+                    <select id="modal-estado" class="form-input form-select" style="border-color: var(--color-secondary);">
+                        <option value="ASIGNADA">Asignada</option>
+                        <option value="EN_PROCESO">En proceso</option>
+                        <option value="CERRADA">Cerrada</option>
+                    </select>
+                </div>
+
+                <div class="form-group form-group--full">
+                    <label class="form-label">Diagnóstico Técnico</label>
+                    <textarea id="modal-diagnostico" class="form-input form-textarea" placeholder="Describe los hallazgos y reparaciones..."></textarea>
+                </div>
+
+                <div class="form-group form-group--full">
+                    <label class="form-label">Firma del Cliente</label>
+                    <canvas id="firma-canvas" width="400" height="140" style="width: 100%; max-width: 40rem; height: 14rem; border: 1px dashed var(--color-zinc-300); border-radius: var(--radius-md); touch-action: none; display: block; background: #fff;"></canvas>
+                    <button type="button" id="btn-firma-limpiar" class="button button--white" style="margin-top: var(--space-2);">Limpiar firma</button>
+                </div>
+                
+                <div class="form-group--full" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-4);">
+                    <button type="button" id="btn-download-pdf-tec" class="button button--secondary" style="display: none; align-items: center; gap: 0.5rem; background-color: var(--color-zinc-800); color: white;"><span class="material-symbols-outlined">download</span> Descargar PDF</button>
+                    <div style="display: flex; gap: var(--space-4);">
+                        <button class="button button--white" onclick="UI.closeModal('modal-detalle')">Cancelar</button>
+                        <button id="btn-save" class="button button--primary button--primary-shadow" style="background-color: var(--color-secondary);">Actualizar Orden</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BottomNavBar -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav__item bottom-nav__item--active" style="color: var(--color-secondary);">
+            <span class="material-symbols-outlined bottom-nav__icon">assignment</span>
+            <span class="bottom-nav__label">Mis Tareas</span>
+        </div>
+        <div class="bottom-nav__item" id="nav-logout">
+            <span class="material-symbols-outlined bottom-nav__icon">logout</span>
+            <span class="bottom-nav__label">Salir</span>
+        </div>
+    </nav>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/demo-json-loader.js"></script>
+    <script src="./assets/js/solicitudes.js"></script>
+    <script src="./assets/js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await window.CC_demoJsonReady;
+
+            const session = db.requireAuth('TECNICO');
+            if (!session) return;
+
+            const banner = document.getElementById('demo-json-banner');
+            if (banner && SolicitudesManager.esDemoArchivoCargado()) {
+                banner.style.display = 'block';
+            }
+
+            document.getElementById('tec-name').textContent = session.nombre;
+
+            let currentSolId = null;
+            let firmaCtx = null;
+            let firmaTouched = false;
+
+            function renderTecComentarios(comentarios) {
+                const list = document.getElementById('tec-modal-comentarios-list');
+                UI.clearElement(list);
+                if (!comentarios || comentarios.length === 0) {
+                    const p = document.createElement('p');
+                    p.style.color = 'var(--color-zinc-400)';
+                    p.style.fontSize = '1.2rem';
+                    p.textContent = 'No hay comentarios';
+                    list.appendChild(p);
+                    return;
+                }
+                comentarios.forEach((c) => {
+                    const block = document.createElement('div');
+                    block.style.marginBottom = '1rem';
+                    block.style.borderBottom = '1px solid var(--color-zinc-200)';
+                    block.style.paddingBottom = '0.5rem';
+                    const meta = document.createElement('div');
+                    meta.style.fontSize = '1rem';
+                    meta.style.color = 'var(--color-zinc-500)';
+                    const strong = document.createElement('strong');
+                    strong.style.color = 'var(--color-secondary)';
+                    strong.textContent = c.autor;
+                    meta.appendChild(strong);
+                    meta.appendChild(document.createTextNode(' — ' + c.fecha));
+                    const body = document.createElement('div');
+                    body.style.fontSize = '1.4rem';
+                    body.style.color = 'var(--color-zinc-800)';
+                    body.textContent = c.texto;
+                    block.appendChild(meta);
+                    block.appendChild(body);
+                    list.appendChild(block);
+                });
+            }
+
+            function limpiarFirmaCanvas() {
+                const canvas = document.getElementById('firma-canvas');
+                if (!canvas || !firmaCtx) return;
+                firmaCtx.clearRect(0, 0, canvas.width, canvas.height);
+                firmaTouched = true;
+            }
+
+            function initFirmaCanvas(initialUrl) {
+                const old = document.getElementById('firma-canvas');
+                if (!old) return;
+                const c = document.createElement('canvas');
+                c.id = 'firma-canvas';
+                c.width = 400;
+                c.height = 140;
+                c.setAttribute('style', 'width: 100%; max-width: 40rem; height: 14rem; border: 1px dashed var(--color-zinc-300); border-radius: var(--radius-md); touch-action: none; display: block; background: #fff;');
+                old.parentNode.replaceChild(c, old);
+
+                firmaCtx = c.getContext('2d');
+                firmaCtx.strokeStyle = '#1f2937';
+                firmaCtx.lineWidth = 2;
+                firmaCtx.lineCap = 'round';
+                firmaTouched = false;
+
+                function pos(e) {
+                    const r = c.getBoundingClientRect();
+                    const cx = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+                    const cy = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+                    const x = (cx - r.left) * (c.width / r.width);
+                    const y = (cy - r.top) * (c.height / r.height);
+                    return { x, y };
+                }
+
+                let drawing = false;
+                function start(e) {
+                    e.preventDefault();
+                    drawing = true;
+                    const p = pos(e);
+                    firmaCtx.beginPath();
+                    firmaCtx.moveTo(p.x, p.y);
+                }
+                function move(e) {
+                    if (!drawing) return;
+                    e.preventDefault();
+                    const p = pos(e);
+                    firmaCtx.lineTo(p.x, p.y);
+                    firmaCtx.stroke();
+                    firmaTouched = true;
+                }
+                function end() {
+                    drawing = false;
+                }
+
+                c.addEventListener('mousedown', start);
+                c.addEventListener('mousemove', move);
+                c.addEventListener('mouseup', end);
+                c.addEventListener('mouseleave', end);
+                c.addEventListener('touchstart', start, { passive: false });
+                c.addEventListener('touchmove', move, { passive: false });
+                c.addEventListener('touchend', end);
+
+                if (initialUrl) {
+                    const img = new Image();
+                    img.onload = () => {
+                        firmaCtx.drawImage(img, 0, 0, c.width, c.height);
+                    };
+                    img.src = initialUrl;
+                }
+            }
+
+            document.getElementById('btn-firma-limpiar').addEventListener('click', limpiarFirmaCanvas);
+
+            document.getElementById('btn-tec-add-comment').addEventListener('click', () => {
+                const input = document.getElementById('tec-modal-nuevo-comentario');
+                if (input.value.trim() && currentSolId) {
+                    if (SolicitudesManager.esSolicitudDemoArchivo(currentSolId)) {
+                        UI.showToast('Los folios SOL-DEMO-* son solo lectura.', true);
+                        return;
+                    }
+                    const ok = SolicitudesManager.addComentario(currentSolId, input.value.trim(), session.nombre);
+                    if (!ok) {
+                        UI.showToast('No se pudo guardar el comentario.', true);
+                        return;
+                    }
+                    input.value = '';
+                    const sol = SolicitudesManager.getById(currentSolId);
+                    renderTecComentarios(sol.comentarios);
+                }
+            });
+
+            function loadDashboard() {
+                const metrics = SolicitudesManager.getTecnicoMetrics(session.id);
+                UI.renderMetrics(metrics, 'metric');
+                const solicitudes = SolicitudesManager.getByTecnico(session.id);
+                UI.renderSolicitudesTable('solicitudes-tbody', solicitudes, openDetalle);
+            }
+
+            function mapEstadoParaSelect(est) {
+                const legacy = {
+                    ASIGNADO: 'ASIGNADA',
+                    FINALIZADO: 'CERRADA',
+                    PENDIENTE: 'ASIGNADA',
+                    ENVIADA: 'ASIGNADA',
+                    EN_REVISION: 'ASIGNADA'
+                };
+                const v = legacy[est] || est;
+                const valid = ['ASIGNADA', 'EN_PROCESO', 'CERRADA'];
+                return valid.includes(v) ? v : 'ASIGNADA';
+            }
+
+            function openDetalle(sol) {
+                currentSolId = sol.id;
+                UI.fillModalData(sol, 'modal');
+                document.getElementById('modal-estado').value = mapEstadoParaSelect(sol.estado);
+                document.getElementById('modal-diagnostico').value = sol.diagnostico || '';
+                renderTecComentarios(sol.comentarios);
+                initFirmaCanvas(sol.firma_cliente || null);
+
+                const btnPdf = document.getElementById('btn-download-pdf-tec');
+                if (sol.pdf_document) {
+                    btnPdf.style.display = 'flex';
+                    btnPdf.onclick = () => UI.downloadSolicitudPdf(sol.pdf_document, sol);
+                } else {
+                    btnPdf.style.display = 'none';
+                }
+
+                UI.openModal('modal-detalle');
+            }
+
+            document.getElementById('btn-save').addEventListener('click', () => {
+                const estado = document.getElementById('modal-estado').value;
+                const diagnostico = document.getElementById('modal-diagnostico').value;
+                const canvas = document.getElementById('firma-canvas');
+
+                if (!currentSolId) return;
+
+                if (SolicitudesManager.esSolicitudDemoArchivo(currentSolId)) {
+                    UI.showToast('Los folios SOL-DEMO-* son solo lectura (archivo demo).', true);
+                    return;
+                }
+
+                const sol = SolicitudesManager.getById(currentSolId);
+                let firma_cliente = sol.firma_cliente;
+                if (firmaTouched && canvas) {
+                    firma_cliente = canvas.toDataURL('image/png');
+                }
+
+                try {
+                    const updated = SolicitudesManager.update(currentSolId, { estado, diagnostico, firma_cliente });
+                    if (!updated) {
+                        UI.showToast('No se pudo guardar.', true);
+                        return;
+                    }
+                } catch (err) {
+                    UI.showToast('No se pudo guardar. Comprueba el espacio del navegador.', true);
+                    return;
+                }
+                UI.showToast('Orden actualizada correctamente.');
+                UI.closeModal('modal-detalle');
+                loadDashboard();
+            });
+
+            loadDashboard();
+        });
+    </script>
+</body>
+</html>

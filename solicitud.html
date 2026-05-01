@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Solicitar Servicio | Cook &amp; Chill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        .header--app { position: sticky; top: 0; z-index: 50; }
+        .solicitud-feedback {
+            margin-top: var(--space-2);
+            margin-bottom: 0;
+            border: 1px solid transparent;
+            line-height: 1.45;
+        }
+    </style>
+</head>
+<body>
+    <header class="header header--app">
+        <div class="header__inner container" style="height: 6.4rem; justify-content: flex-start; gap: var(--space-4);">
+            <a href="index.html" class="header__mobile-btn" style="display: flex;">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <h1 class="header__title" style="font-size: var(--text-lg); color: var(--color-primary);">Nueva Solicitud</h1>
+        </div>
+    </header>
+
+    <main class="app-container" style="padding-bottom: 4rem;">
+        <div id="cliente-sesion-bar" class="dashboard-card form-group--full" style="display: none; margin-bottom: var(--space-4); padding: var(--space-4);">
+            <p style="margin: 0; font-size: 1.4rem;">
+                Sesión: <strong id="cliente-sesion-nombre"></strong>
+                · <a href="cliente-panel.html">Mis solicitudes</a>
+                · <a href="#" id="cliente-sesion-cerrar">Cerrar sesión</a>
+            </p>
+        </div>
+        <div id="cliente-sesion-invite" class="dashboard-card form-group--full" style="margin-bottom: var(--space-4); padding: var(--space-4); background: var(--color-zinc-50);">
+            <p style="margin: 0; font-size: 1.4rem; color: var(--color-zinc-700);">
+                ¿Cliente registrado? <a href="cliente-auth.html" style="color: var(--color-primary); font-weight: 600;">Inicia sesión</a> para vincular esta solicitud a tu cuenta y darle seguimiento en línea.
+            </p>
+        </div>
+
+        <form id="client-solicitud-form" class="form-grid" novalidate>
+            
+            <!-- Info Cliente -->
+            <div class="dashboard-card form-group--full">
+                <div class="dashboard-card__header">
+                    <span class="material-symbols-outlined" style="color: var(--color-primary);">person</span>
+                    <h2 class="dashboard-card__title">Información del Cliente</h2>
+                </div>
+                <div class="form-grid mt-2">
+                    <div class="form-group form-group--full">
+                        <label class="form-label">Nombre del Cliente / Empresa</label>
+                        <input type="text" id="cliente" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Distribuidor</label>
+                        <input type="text" id="distribuidor" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Fecha</label>
+                        <input type="date" id="fecha" class="form-input" required>
+                    </div>
+                    <div class="form-group form-group--full">
+                        <label class="form-label">Ubicación</label>
+                        <input type="text" id="ubicacion" class="form-input" required placeholder="Ej. Av. Insurgentes Sur 1234">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipo -->
+            <div class="dashboard-card dashboard-card--primary form-group--full" style="background-color: var(--color-primary);">
+                <div class="dashboard-card__header">
+                    <span class="material-symbols-outlined">settings_suggest</span>
+                    <h2 class="dashboard-card__title">Datos del Equipo</h2>
+                </div>
+                <div class="form-grid mt-2">
+                    <div class="form-group">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Marca</label>
+                        <input type="text" id="marca" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Modelo</label>
+                        <input type="text" id="modelo" class="form-input" required>
+                    </div>
+                    <div class="form-group form-group--full">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Número de Serie</label>
+                        <input type="text" id="serie" class="form-input" required>
+                    </div>
+
+                    <hr class="form-group--full" style="border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: var(--space-2) 0;">
+                    
+                    <div class="form-group">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Amperaje</label>
+                        <input type="text" id="amperaje" class="form-input" placeholder="Ej. 15 A">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Voltaje</label>
+                        <input type="text" id="voltaje" class="form-input" placeholder="Ej. 220 V">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Presión</label>
+                        <input type="text" id="presion" class="form-input" placeholder="Ej. 30 PSI">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Temp. Ambiente</label>
+                        <input type="text" id="temp_ambiente" class="form-input" placeholder="Ej. 25 °C">
+                    </div>
+                    <div class="form-group form-group--full">
+                        <label class="form-label" style="color: rgba(255,255,255,0.8);">Temp. Cabina</label>
+                        <input type="text" id="temp_cabina" class="form-input" placeholder="Ej. -18 °C">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio -->
+            <div class="dashboard-card form-group--full">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Tipo de Servicio</label>
+                        <select id="tipo_servicio" class="form-input form-select" required>
+                            <option value="REVISION">Revisión</option>
+                            <option value="REPARACION">Reparación</option>
+                            <option value="MANTENIMIENTO">Mantenimiento</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Garantía</label>
+                        <select id="garantia" class="form-input form-select" required>
+                            <option value="true">Vigente</option>
+                            <option value="false">Expirada</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group--full">
+                        <label class="form-label">Refacciones</label>
+                        <select id="refacciones_estado" class="form-input form-select" required>
+                            <option value="NO_APLICA">No aplica / Ninguna</option>
+                            <option value="COLOCADAS">Colocadas</option>
+                            <option value="POR_COTIZAR">Por cotizar</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GPS View -->
+            <div class="dashboard-card form-group--full" style="padding: 0; overflow: hidden;">
+                <div class="dashboard-card__header" style="padding: var(--space-4); background: var(--color-zinc-50); border-bottom: 1px solid var(--color-zinc-200); margin: 0; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <span class="material-symbols-outlined" style="color: var(--color-primary);">distance</span>
+                        <h2 class="dashboard-card__title">Ubicación GPS</h2>
+                    </div>
+                    <button type="button" id="btn-get-location" class="button button--white" style="padding: 0.4rem 0.8rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="material-symbols-outlined" style="font-size: 1.6rem;">my_location</span> Obtener
+                    </button>
+                </div>
+                <div id="map-container" style="height: 20rem; position: relative; background: var(--color-zinc-100); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: var(--space-4);">
+                    <span class="material-symbols-outlined" style="font-size: 3.6rem; color: var(--color-zinc-300); margin-bottom: 1rem;">map</span>
+                    <p style="color: var(--color-zinc-500); font-size: 1.2rem;">Presiona «Obtener» para cargar tu ubicación o indica coordenadas manuales.</p>
+                </div>
+                <div class="form-grid" style="padding: var(--space-4); background: var(--color-white); border-top: 1px solid var(--color-zinc-200); gap: var(--space-2);">
+                    <p class="form-group--full" style="font-size: 1.2rem; color: var(--color-zinc-600); margin: 0;">Si no puedes usar el GPS, ingresa latitud y longitud (ej. 19.4326, -99.1332) y pulsa «Aplicar».</p>
+                    <div class="form-group">
+                        <label class="form-label">Latitud</label>
+                        <input type="text" id="gps-lat-manual" class="form-input" inputmode="decimal" placeholder="19.4326" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Longitud</label>
+                        <input type="text" id="gps-lng-manual" class="form-input" inputmode="decimal" placeholder="-99.1332" autocomplete="off">
+                    </div>
+                    <div class="form-group form-group--full">
+                        <button type="button" id="btn-gps-manual-apply" class="button button--white">Aplicar coordenadas en mapa</button>
+                    </div>
+                </div>
+                <div id="gps-coordinates" style="padding: var(--space-3) var(--space-4); background: var(--color-white); border-top: 1px solid var(--color-zinc-200); font-size: 1.2rem; color: var(--color-zinc-600); display: none;">
+                </div>
+            </div>
+
+            <!-- Photos -->
+            <div class="dashboard-card form-group--full" style="background-color: var(--color-zinc-50); margin-top: var(--space-4);">
+                <div class="dashboard-card__header">
+                    <span class="material-symbols-outlined" style="color: var(--color-primary);">camera_alt</span>
+                    <h2 class="dashboard-card__title">Evidencia Fotográfica</h2>
+                </div>
+                <div class="form-grid mt-2">
+                    <div class="form-group">
+                        <label class="form-label">Foto del Equipo 1 (Obligatoria)</label>
+                        <label class="photo-upload" for="foto_equipo_1" style="min-height: 8rem;">
+                            <span class="material-symbols-outlined photo-upload__icon">add_a_photo</span>
+                            <span class="photo-upload__text" id="lbl-foto-equipo-1">Tomar Foto 1</span>
+                            <input type="file" id="foto_equipo_1" accept="image/*" capture="environment" style="display: none;">
+                        </label>
+                        <div id="preview-equipo-1" style="display: flex; justify-content: center; margin-top: 0.5rem;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Foto del Equipo 2 (Obligatoria)</label>
+                        <label class="photo-upload" for="foto_equipo_2" style="min-height: 8rem;">
+                            <span class="material-symbols-outlined photo-upload__icon">add_a_photo</span>
+                            <span class="photo-upload__text" id="lbl-foto-equipo-2">Tomar Foto 2</span>
+                            <input type="file" id="foto_equipo_2" accept="image/*" capture="environment" style="display: none;">
+                        </label>
+                        <div id="preview-equipo-2" style="display: flex; justify-content: center; margin-top: 0.5rem;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Foto del Equipo 3 (Opcional)</label>
+                        <label class="photo-upload" for="foto_equipo_3" style="min-height: 8rem;">
+                            <span class="material-symbols-outlined photo-upload__icon">add_a_photo</span>
+                            <span class="photo-upload__text" id="lbl-foto-equipo-3">Tomar Foto 3</span>
+                            <input type="file" id="foto_equipo_3" accept="image/*" capture="environment" style="display: none;">
+                        </label>
+                        <div id="preview-equipo-3" style="display: flex; justify-content: center; margin-top: 0.5rem;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Placa de Especificaciones (Oblig.)</label>
+                        <label class="photo-upload" for="foto_placa" style="min-height: 8rem;">
+                            <span class="material-symbols-outlined photo-upload__icon">camera</span>
+                            <span class="photo-upload__text" id="lbl-foto-placa">Tomar Placa</span>
+                            <input type="file" id="foto_placa" accept="image/*" capture="environment" style="display: none;">
+                        </label>
+                        <div id="preview-placa" style="display: flex; justify-content: center; margin-top: 0.5rem;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observaciones -->
+            <div class="dashboard-card form-group--full">
+                <div class="form-group">
+                    <label class="form-label">Falla Reportada / Observaciones</label>
+                    <textarea id="observaciones" class="form-input form-textarea" placeholder="Describa el problema..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group--full" style="margin-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2);">
+                <div id="pdf-status" style="display: none; flex-direction: column; gap: var(--space-2); padding: var(--space-3); background-color: var(--color-surface-container); border: 1px solid var(--color-zinc-200); border-radius: var(--radius-md); text-align: center; margin-bottom: var(--space-2);">
+                    <div style="color: #166534; font-weight: 500;">
+                        <span class="material-symbols-outlined" style="vertical-align: middle;">check_circle</span> Documento PDF generado correctamente.
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-2); flex-wrap: wrap;">
+                        <button type="button" id="btn-download-pdf" class="button button--secondary" style="flex: 1; min-width: 100px; justify-content: center; font-size: 1.1rem;"><span class="material-symbols-outlined" style="font-size: 1.6rem;">download</span> Descargar</button>
+                        <button type="button" id="btn-delete-pdf" class="button button--white" style="flex: 1; min-width: 100px; justify-content: center; color: var(--color-error); border-color: var(--color-error); font-size: 1.1rem;"><span class="material-symbols-outlined" style="font-size: 1.6rem;">delete</span> Eliminar</button>
+                    </div>
+                </div>
+                <button type="button" id="btn-generate-pdf" class="button button--secondary button--full button--large" style="background-color: var(--color-zinc-800); color: white;">
+                    <span class="material-symbols-outlined">picture_as_pdf</span>
+                    Generar Documento PDF (Obligatorio)
+                </button>
+                <div id="solicitud-feedback" class="form-group--full solicitud-feedback" style="display: none;" role="alert" aria-live="polite"></div>
+                <button type="submit" id="btn-submit-solicitud" class="button button--primary button--full button--large button--primary-shadow" disabled style="opacity: 0.5; cursor: not-allowed;">
+                    Enviar Solicitud
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/demo-json-loader.js"></script>
+    <script src="./assets/js/solicitudes.js"></script>
+</body>
+</html>

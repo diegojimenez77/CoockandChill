@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Clientes | Cook &amp; Chill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        body { background-color: var(--color-surface-container); }
+        .auth-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: var(--space-4); }
+        .auth-card { background: var(--color-white); padding: var(--space-8); border-radius: var(--radius-2xl); width: 100%; max-width: 48rem; box-shadow: var(--shadow-xl); }
+        .auth-logo { width: 6.4rem; height: 6.4rem; margin: 0 auto var(--space-6); display: block; border-radius: var(--radius-md); }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <img src="./assets/img/Logo.jpeg" alt="Logo" class="auth-logo">
+            <div id="cliente-auth-feedback" style="display: none;"></div>
+
+            <div id="cliente-login-view">
+                <h1 class="header__title" style="text-align: center; margin-bottom: var(--space-2);">Área de clientes</h1>
+                <p style="text-align: center; color: var(--color-zinc-500); margin-bottom: var(--space-6);">Consulta el estado de tus solicitudes de servicio</p>
+
+                <div id="cliente-auth-demo-box" style="background-color: var(--color-zinc-50); border: 1px dashed var(--color-zinc-300); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-6); font-size: 1.2rem; text-align: center;">
+                    <strong style="color: var(--color-primary); display: block; margin-bottom: var(--space-2); text-transform: uppercase;">Acceso demostración — Cliente</strong>
+                    <p style="margin: 0 0 var(--space-2); color: var(--color-zinc-600); font-size: 1.1rem;">Puedes usar esta cuenta para probar el área de clientes:</p>
+                    <div style="color: var(--color-zinc-800);">
+                        <div><strong>Usuario:</strong> cliente@cookandchill.com.mx</div>
+                        <div style="margin-top: 0.4rem;"><strong>Contraseña:</strong> <code style="background: var(--color-zinc-100); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm);">cliente</code></div>
+                    </div>
+                    <p style="margin: var(--space-3) 0 0; font-size: 1.1rem; color: var(--color-zinc-500);">Tras iniciar sesión, el panel incluye ejemplos del archivo <code>demo-solicitudes.json</code> además de tus solicitudes reales.</p>
+                </div>
+
+                <form id="cliente-login-form" class="form-group" style="gap: var(--space-4);">
+                    <div class="form-group">
+                        <label class="form-label">Correo electrónico</label>
+                        <input type="email" id="cliente-login-email" class="form-input" required autocomplete="username" placeholder="cliente@cookandchill.com.mx">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" id="cliente-login-password" class="form-input" required autocomplete="current-password" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="button button--primary button--full">Entrar</button>
+                </form>
+
+                <p style="text-align: center; margin-top: var(--space-6); font-size: 1.4rem;">
+                    ¿No tienes cuenta? <a href="#" class="cliente-auth-toggle" data-target="register" style="color: var(--color-primary); font-weight: 700;">Regístrate</a>
+                </p>
+                <div style="text-align: center; margin-top: var(--space-4);">
+                    <a href="index.html" style="color: var(--color-zinc-500); text-decoration: underline; font-size: 1.2rem;">Volver al inicio</a>
+                </div>
+            </div>
+
+            <div id="cliente-register-view" style="display: none;">
+                <h1 class="header__title" style="text-align: center; margin-bottom: var(--space-2);">Crear cuenta de cliente</h1>
+                <p style="text-align: center; color: var(--color-zinc-500); margin-bottom: var(--space-6);">Podrás enviar solicitudes y ver su seguimiento con tu mismo correo</p>
+
+                <form id="cliente-register-form" class="form-group" style="gap: var(--space-4);">
+                    <div class="form-group">
+                        <label class="form-label">Nombre completo</label>
+                        <input type="text" id="cliente-reg-nombre" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Correo electrónico</label>
+                        <input type="email" id="cliente-reg-email" class="form-input" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" id="cliente-reg-password" class="form-input" required autocomplete="new-password">
+                    </div>
+                    <button type="submit" class="button button--primary button--full">Registrarse</button>
+                </form>
+
+                <p style="text-align: center; margin-top: var(--space-6); font-size: 1.4rem;">
+                    ¿Ya tienes cuenta? <a href="#" class="cliente-auth-toggle" data-target="login" style="color: var(--color-primary); font-weight: 700;">Inicia sesión</a>
+                </p>
+                <div style="text-align: center; margin-top: var(--space-4);">
+                    <a href="index.html" style="color: var(--color-zinc-500); text-decoration: underline; font-size: 1.2rem;">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/cliente-auth.js"></script>
+</body>
+</html>

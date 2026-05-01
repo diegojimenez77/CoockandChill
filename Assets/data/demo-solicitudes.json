@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "SOL-DEMO-001",
+    "cliente": "Carnes del Norte",
+    "fecha": "2025-02-27",
+    "ubicacion": "Av. Reforma 1000, Col. Centro, Ciudad de México",
+    "equipo": {
+      "marca": "Rational",
+      "modelo": "ICP-6",
+      "serie": "SN-DEMO-2025000",
+      "amperaje": "6.2 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Equipos Pro S.A."
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "REVISION",
+    "garantia": true,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": 3,
+    "distribuidor": "Frío Total",
+    "observaciones": "Cliente reporta temperatura alta en cámara. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.38000",
+      "lng": "-99.15000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-002",
+    "cliente": "La Terraza Bistro",
+    "fecha": "2025-02-27",
+    "ubicacion": "Av. Insurgentes 1037, Col. Del Valle, Ciudad de México",
+    "equipo": {
+      "marca": "Hoshizaki",
+      "modelo": "IM-450",
+      "serie": "SN-DEMO-2025001",
+      "amperaje": "4.8 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Frío Total"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "REPARACION",
+    "garantia": false,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": null,
+    "distribuidor": "Distribuidora Metropolitana",
+    "observaciones": "Cliente reporta ruido en ventilador condensador. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.39400",
+      "lng": "-99.13800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-003",
+    "cliente": "Hospital Vitalis",
+    "fecha": "2025-02-27",
+    "ubicacion": "Av. Universidad 1074, Col. Narvarte, Ciudad de México",
+    "equipo": {
+      "marca": "Infrico",
+      "modelo": "NPT330",
+      "serie": "SN-DEMO-2025002",
+      "amperaje": "5.5 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Distribuidora Metropolitana"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": true,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": null,
+    "distribuidor": "ServiHoreca",
+    "observaciones": "Cliente reporta escarcha excesiva en evaporador. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.40800",
+      "lng": "-99.12600"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/3639433/pexels-photo-3639433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6969867/pexels-photo-6969867.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-004",
+    "cliente": "Hotel Aurora CDMX",
+    "fecha": "2025-02-26",
+    "ubicacion": "Av. Cuauhtémoc 1111, Col. Roma, Ciudad de México",
+    "equipo": {
+      "marca": "Tecumseh",
+      "modelo": "AE4440",
+      "serie": "SN-DEMO-2025003",
+      "amperaje": "7.1 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "ServiHoreca"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "REVISION",
+    "garantia": false,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": null,
+    "distribuidor": "Importadora Z MG",
+    "observaciones": "Cliente reporta alarma de fallo eléctrico. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.41600",
+      "lng": "-99.11400"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4109118/pexels-photo-4109118.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-005",
+    "cliente": "Panadería El Fermento",
+    "fecha": "2025-02-26",
+    "ubicacion": "Av. Patriotismo 1148, Col. Condesa, Ciudad de México",
+    "equipo": {
+      "marca": "Carrier",
+      "modelo": "5H120",
+      "serie": "SN-DEMO-2025004",
+      "amperaje": "6.2 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Importadora Z MG"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "REPARACION",
+    "garantia": true,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": 3,
+    "distribuidor": "Equipos Pro S.A.",
+    "observaciones": "Cliente reporta puerta con fuga de burlete. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.43000",
+      "lng": "-99.09000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-006",
+    "cliente": "Sushi Bar Azul",
+    "fecha": "2025-02-26",
+    "ubicacion": "Av. División 1185, Col. Polanco, Ciudad de México",
+    "equipo": {
+      "marca": "True",
+      "modelo": "TUC-48",
+      "serie": "SN-DEMO-2025005",
+      "amperaje": "4.8 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Equipos Pro S.A."
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": false,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": null,
+    "distribuidor": "Frío Total",
+    "observaciones": "Cliente reporta ciclo corto del compresor. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.44400",
+      "lng": "-99.07800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-007",
+    "cliente": "Taquería Don Lupe",
+    "fecha": "2025-02-25",
+    "ubicacion": "Av. Eugenia 1222, Col. Azcapotzalco, Ciudad de México",
+    "equipo": {
+      "marca": "Turbo Air",
+      "modelo": "RCB480",
+      "serie": "SN-DEMO-2025006",
+      "amperaje": "5.5 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Frío Total"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "REVISION",
+    "garantia": true,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": null,
+    "distribuidor": "Distribuidora Metropolitana",
+    "observaciones": "Cliente reporta display sin encender. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.45200",
+      "lng": "-99.06600"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/3639433/pexels-photo-3639433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6969867/pexels-photo-6969867.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-008",
+    "cliente": "Café Bruma",
+    "fecha": "2025-02-25",
+    "ubicacion": "Av. Coyoacán 1259, Col. Iztapalapa, Ciudad de México",
+    "equipo": {
+      "marca": "Delfield",
+      "modelo": "UCR60A",
+      "serie": "SN-DEMO-2025007",
+      "amperaje": "7.1 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Distribuidora Metropolitana"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "REPARACION",
+    "garantia": false,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": null,
+    "distribuidor": "ServiHoreca",
+    "observaciones": "Cliente reporta vibración anómala. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.46600",
+      "lng": "-99.05400"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4109118/pexels-photo-4109118.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-009",
+    "cliente": "Laboratorio Clínico Medix",
+    "fecha": "2025-02-25",
+    "ubicacion": "Av. Tlalpan 1296, Col. Coyoacán, Ciudad de México",
+    "equipo": {
+      "marca": "Beverage-Air",
+      "modelo": "BM23",
+      "serie": "SN-DEMO-2025008",
+      "amperaje": "6.2 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "ServiHoreca"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": true,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": 3,
+    "distribuidor": "Importadora Z MG",
+    "observaciones": "Cliente reporta consumo elevado. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.48000",
+      "lng": "-99.15000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-010",
+    "cliente": "Escuela Gastronómica Sur",
+    "fecha": "2025-02-24",
+    "ubicacion": "Av. Mixcoac 1333, Col. Tlalpan, Ciudad de México",
+    "equipo": {
+      "marca": "Traulsen",
+      "modelo": "RLD232W",
+      "serie": "SN-DEMO-2025009",
+      "amperaje": "4.8 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Importadora Z MG"
+    },
+    "estado": "EN_REVISION",
+    "tipo_servicio": "REVISION",
+    "garantia": false,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "",
+    "tecnico_id": null,
+    "cliente_usuario_id": null,
+    "distribuidor": "Equipos Pro S.A.",
+    "observaciones": "Cliente reporta olores en el condensado. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.48800",
+      "lng": "-99.13800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-011",
+    "cliente": "Restaurante Alameda",
+    "fecha": "2025-02-24",
+    "ubicacion": "Av. Reforma 1370, Col. Centro, Ciudad de México",
+    "equipo": {
+      "marca": "Ice-o-matic",
+      "modelo": "SY3654",
+      "serie": "SN-DEMO-2025010",
+      "amperaje": "5.5 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Equipos Pro S.A."
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "REPARACION",
+    "garantia": true,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Frío Total",
+    "observaciones": "Cliente reporta temperatura alta en cámara. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.38200",
+      "lng": "-99.12600"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/3639433/pexels-photo-3639433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6969867/pexels-photo-6969867.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-012",
+    "cliente": "Catering Elegante",
+    "fecha": "2025-02-24",
+    "ubicacion": "Av. Insurgentes 1407, Col. Del Valle, Ciudad de México",
+    "equipo": {
+      "marca": "Victory",
+      "modelo": "T49HC",
+      "serie": "SN-DEMO-2025011",
+      "amperaje": "7.1 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Frío Total"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": false,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Distribuidora Metropolitana",
+    "observaciones": "Cliente reporta ruido en ventilador condensador. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.39600",
+      "lng": "-99.11400"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4109118/pexels-photo-4109118.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-013",
+    "cliente": "Pescados y Mariscos Pacífico",
+    "fecha": "2025-02-23",
+    "ubicacion": "Av. Universidad 1444, Col. Narvarte, Ciudad de México",
+    "equipo": {
+      "marca": "Foster",
+      "modelo": "ICP-6",
+      "serie": "SN-DEMO-2025012",
+      "amperaje": "6.2 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Distribuidora Metropolitana"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "REVISION",
+    "garantia": true,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": 3,
+    "distribuidor": "ServiHoreca",
+    "observaciones": "Cliente reporta escarcha excesiva en evaporador. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.40400",
+      "lng": "-99.09000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-014",
+    "cliente": "Heladería Polar",
+    "fecha": "2025-02-23",
+    "ubicacion": "Av. Cuauhtémoc 1481, Col. Roma, Ciudad de México",
+    "equipo": {
+      "marca": "Arneg",
+      "modelo": "IM-450",
+      "serie": "SN-DEMO-2025013",
+      "amperaje": "4.8 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "ServiHoreca"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "REPARACION",
+    "garantia": false,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Importadora Z MG",
+    "observaciones": "Cliente reporta alarma de fallo eléctrico. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.41800",
+      "lng": "-99.07800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-015",
+    "cliente": "Comedor Industrial GM",
+    "fecha": "2025-02-23",
+    "ubicacion": "Av. Patriotismo 1518, Col. Condesa, Ciudad de México",
+    "equipo": {
+      "marca": "Ugur",
+      "modelo": "NPT330",
+      "serie": "SN-DEMO-2025014",
+      "amperaje": "5.5 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Importadora Z MG"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": true,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Equipos Pro S.A.",
+    "observaciones": "Cliente reporta puerta con fuga de burlete. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.43200",
+      "lng": "-99.06600"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/3639433/pexels-photo-3639433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6969867/pexels-photo-6969867.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-016",
+    "cliente": "Bodega Frío Sur",
+    "fecha": "2025-02-22",
+    "ubicacion": "Av. División 1555, Col. Polanco, Ciudad de México",
+    "equipo": {
+      "marca": "Rational",
+      "modelo": "AE4440",
+      "serie": "SN-DEMO-2025015",
+      "amperaje": "7.1 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Equipos Pro S.A."
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "REVISION",
+    "garantia": false,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Frío Total",
+    "observaciones": "Cliente reporta ciclo corto del compresor. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.44000",
+      "lng": "-99.05400"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4109118/pexels-photo-4109118.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-017",
+    "cliente": "Pizzería Forno",
+    "fecha": "2025-02-22",
+    "ubicacion": "Av. Eugenia 1592, Col. Azcapotzalco, Ciudad de México",
+    "equipo": {
+      "marca": "Hoshizaki",
+      "modelo": "5H120",
+      "serie": "SN-DEMO-2025016",
+      "amperaje": "6.2 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Frío Total"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "REPARACION",
+    "garantia": true,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": 3,
+    "distribuidor": "Distribuidora Metropolitana",
+    "observaciones": "Cliente reporta display sin encender. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.45400",
+      "lng": "-99.15000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-018",
+    "cliente": "Mercado Gourmet 12",
+    "fecha": "2025-02-22",
+    "ubicacion": "Av. Coyoacán 1629, Col. Iztapalapa, Ciudad de México",
+    "equipo": {
+      "marca": "Infrico",
+      "modelo": "TUC-48",
+      "serie": "SN-DEMO-2025017",
+      "amperaje": "4.8 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Distribuidora Metropolitana"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": false,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "ServiHoreca",
+    "observaciones": "Cliente reporta vibración anómala. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.46800",
+      "lng": "-99.13800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-019",
+    "cliente": "Comedores Escolares Unidos",
+    "fecha": "2025-02-21",
+    "ubicacion": "Av. Tlalpan 1666, Col. Coyoacán, Ciudad de México",
+    "equipo": {
+      "marca": "Tecumseh",
+      "modelo": "RCB480",
+      "serie": "SN-DEMO-2025018",
+      "amperaje": "5.5 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "ServiHoreca"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "REVISION",
+    "garantia": true,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Importadora Z MG",
+    "observaciones": "Cliente reporta consumo elevado. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.47600",
+      "lng": "-99.12600"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/3639433/pexels-photo-3639433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6969867/pexels-photo-6969867.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-020",
+    "cliente": "Club Deportivo Aqua",
+    "fecha": "2025-02-21",
+    "ubicacion": "Av. Mixcoac 1703, Col. Tlalpan, Ciudad de México",
+    "equipo": {
+      "marca": "Carrier",
+      "modelo": "UCR60A",
+      "serie": "SN-DEMO-2025019",
+      "amperaje": "7.1 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Importadora Z MG"
+    },
+    "estado": "ASIGNADA",
+    "tipo_servicio": "REPARACION",
+    "garantia": false,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "Diagnóstico pendiente de visita en sitio.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Equipos Pro S.A.",
+    "observaciones": "Cliente reporta olores en el condensado. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.49000",
+      "lng": "-99.11400"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4109118/pexels-photo-4109118.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      }
+    ],
+    "firma_cliente": ""
+  },
+  {
+    "id": "SOL-DEMO-021",
+    "cliente": "Mariscos La Perla",
+    "fecha": "2025-02-21",
+    "ubicacion": "Av. Reforma 1740, Col. Centro, Ciudad de México",
+    "equipo": {
+      "marca": "True",
+      "modelo": "BM23",
+      "serie": "SN-DEMO-2025020",
+      "amperaje": "6.2 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Equipos Pro S.A."
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": true,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": 3,
+    "distribuidor": "Frío Total",
+    "observaciones": "Cliente reporta temperatura alta en cámara. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.38400",
+      "lng": "-99.09000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-022",
+    "cliente": "Vinos y Tapas",
+    "fecha": "2025-02-20",
+    "ubicacion": "Av. Insurgentes 1777, Col. Del Valle, Ciudad de México",
+    "equipo": {
+      "marca": "Turbo Air",
+      "modelo": "RLD232W",
+      "serie": "SN-DEMO-2025021",
+      "amperaje": "4.8 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Frío Total"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "REVISION",
+    "garantia": false,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Distribuidora Metropolitana",
+    "observaciones": "Cliente reporta ruido en ventilador condensador. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.39200",
+      "lng": "-99.07800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-023",
+    "cliente": "Comida Hospitalaria Norte",
+    "fecha": "2025-02-20",
+    "ubicacion": "Av. Universidad 1814, Col. Narvarte, Ciudad de México",
+    "equipo": {
+      "marca": "Delfield",
+      "modelo": "SY3654",
+      "serie": "SN-DEMO-2025022",
+      "amperaje": "5.5 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Distribuidora Metropolitana"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "REPARACION",
+    "garantia": true,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "ServiHoreca",
+    "observaciones": "Cliente reporta escarcha excesiva en evaporador. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.40600",
+      "lng": "-99.06600"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/3639433/pexels-photo-3639433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6969867/pexels-photo-6969867.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-024",
+    "cliente": "Refrigerados del Valle",
+    "fecha": "2025-02-20",
+    "ubicacion": "Av. Cuauhtémoc 1851, Col. Roma, Ciudad de México",
+    "equipo": {
+      "marca": "Beverage-Air",
+      "modelo": "T49HC",
+      "serie": "SN-DEMO-2025023",
+      "amperaje": "7.1 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "ServiHoreca"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": false,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Importadora Z MG",
+    "observaciones": "Cliente reporta alarma de fallo eléctrico. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.42000",
+      "lng": "-99.05400"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4109118/pexels-photo-4109118.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-025",
+    "cliente": "Cocina Central Aeropuerto",
+    "fecha": "2025-02-19",
+    "ubicacion": "Av. Patriotismo 1888, Col. Condesa, Ciudad de México",
+    "equipo": {
+      "marca": "Traulsen",
+      "modelo": "ICP-6",
+      "serie": "SN-DEMO-2025024",
+      "amperaje": "6.2 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Importadora Z MG"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "REVISION",
+    "garantia": true,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": 3,
+    "distribuidor": "Equipos Pro S.A.",
+    "observaciones": "Cliente reporta puerta con fuga de burlete. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.42800",
+      "lng": "-99.15000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-026",
+    "cliente": "Buffet Internacional",
+    "fecha": "2025-02-19",
+    "ubicacion": "Av. División 1925, Col. Polanco, Ciudad de México",
+    "equipo": {
+      "marca": "Ice-o-matic",
+      "modelo": "IM-450",
+      "serie": "SN-DEMO-2025025",
+      "amperaje": "4.8 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "Equipos Pro S.A."
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "REPARACION",
+    "garantia": false,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Frío Total",
+    "observaciones": "Cliente reporta ciclo corto del compresor. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.44200",
+      "lng": "-99.13800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-027",
+    "cliente": "Ensaladas Urbanas",
+    "fecha": "2025-02-19",
+    "ubicacion": "Av. Eugenia 1962, Col. Azcapotzalco, Ciudad de México",
+    "equipo": {
+      "marca": "Victory",
+      "modelo": "NPT330",
+      "serie": "SN-DEMO-2025026",
+      "amperaje": "5.5 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Frío Total"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": true,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Distribuidora Metropolitana",
+    "observaciones": "Cliente reporta display sin encender. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.45600",
+      "lng": "-99.12600"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/3639433/pexels-photo-3639433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6969867/pexels-photo-6969867.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-028",
+    "cliente": "Food Truck Norte",
+    "fecha": "2025-02-18",
+    "ubicacion": "Av. Coyoacán 1999, Col. Iztapalapa, Ciudad de México",
+    "equipo": {
+      "marca": "Foster",
+      "modelo": "AE4440",
+      "serie": "SN-DEMO-2025027",
+      "amperaje": "7.1 A",
+      "voltaje": "115 V",
+      "presion": "R134a 12 PSI",
+      "temp_ambiente": "24 °C",
+      "temp_cabina": "2 °C",
+      "distribuidor": "Distribuidora Metropolitana"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "REVISION",
+    "garantia": false,
+    "refacciones_estado": "COLOCADAS",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "ServiHoreca",
+    "observaciones": "Cliente reporta vibración anómala. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.46400",
+      "lng": "-99.11400"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/4259140/pexels-photo-4259140.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4109118/pexels-photo-4109118.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-029",
+    "cliente": "Molino de Grano",
+    "fecha": "2025-02-18",
+    "ubicacion": "Av. Tlalpan 2036, Col. Coyoacán, Ciudad de México",
+    "equipo": {
+      "marca": "Arneg",
+      "modelo": "5H120",
+      "serie": "SN-DEMO-2025028",
+      "amperaje": "6.2 A",
+      "voltaje": "220 V",
+      "presion": "R404A 18 PSI",
+      "temp_ambiente": "26 °C",
+      "temp_cabina": "-18 °C",
+      "distribuidor": "ServiHoreca"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "REPARACION",
+    "garantia": true,
+    "refacciones_estado": "POR_COTIZAR",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": 3,
+    "distribuidor": "Importadora Z MG",
+    "observaciones": "Cliente reporta consumo elevado. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.47800",
+      "lng": "-99.09000"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/2342208/pexels-photo-2342208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/4207784/pexels-photo-4207784.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  },
+  {
+    "id": "SOL-DEMO-030",
+    "cliente": "Lácteos La Pradera",
+    "fecha": "2025-02-18",
+    "ubicacion": "Av. Mixcoac 2073, Col. Tlalpan, Ciudad de México",
+    "equipo": {
+      "marca": "Ugur",
+      "modelo": "TUC-48",
+      "serie": "SN-DEMO-2025029",
+      "amperaje": "4.8 A",
+      "voltaje": "208 V",
+      "presion": "R290 10 PSI",
+      "temp_ambiente": "22 °C",
+      "temp_cabina": "4 °C",
+      "distribuidor": "Importadora Z MG"
+    },
+    "estado": "CERRADA",
+    "tipo_servicio": "MANTENIMIENTO",
+    "garantia": false,
+    "refacciones_estado": "SIN_REFACCIONES",
+    "diagnostico": "Compresor operando dentro de rango. Se reemplazó relé de arranque. Se selló fuga menor en línea de succión. Equipo calibrado a +2 °C en cámara.",
+    "tecnico_id": 2,
+    "cliente_usuario_id": null,
+    "distribuidor": "Equipos Pro S.A.",
+    "observaciones": "Cliente reporta olores en el condensado. Equipo en operación crítica para el negocio.",
+    "gps": {
+      "lat": "19.49200",
+      "lng": "-99.07800"
+    },
+    "fotos_base64": {
+      "eq1": "https://images.pexels.com/photos/6800146/pexels-photo-6800146.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq2": "https://images.pexels.com/photos/5767936/pexels-photo-5767936.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "eq3": "https://images.pexels.com/photos/6542637/pexels-photo-6542637.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "placa": "https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    "pdf_document": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "comentarios": [
+      {
+        "fecha": "15/01/2025 09:15:12",
+        "autor": "Recepción Cook & Chill",
+        "texto": "Solicitud registrada en sistema. Folio asignado."
+      },
+      {
+        "fecha": "15/01/2025 11:40:00",
+        "autor": "Admin Principal",
+        "texto": "Revisando documentación y fotografías del equipo."
+      },
+      {
+        "fecha": "16/01/2025 08:00:00",
+        "autor": "Coordinación",
+        "texto": "Asignado técnico para visita de diagnóstico."
+      },
+      {
+        "fecha": "17/01/2025 14:30:00",
+        "autor": "Técnico Roberto",
+        "texto": "Se realizó servicio; se verificó presión y sellos. Cliente firmó acta."
+      },
+      {
+        "fecha": "17/01/2025 18:00:00",
+        "autor": "Admin Principal",
+        "texto": "Orden cerrada y archivada."
+      }
+    ],
+    "firma_cliente": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%3E%3Ctext%20x%3D%2210%22%20y%3D%2248%22%20font-family%3D%22sans-serif%22%20font-size%3D%2218%22%20fill%3D%22%231f2937%22%3EFirma%20cliente%20(demo)%3C%2Ftext%3E%3C%2Fsvg%3E"
+  }
+]
